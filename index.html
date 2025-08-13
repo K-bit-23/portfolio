@@ -31,28 +31,26 @@
     <div id="particles"></div>
     
     <!-- Navigation -->
-  <nav class="nav">
+<nav class="nav">
     <div class="nav-container">
         <div class="nav-logo">
             <span class="gradient-text" style="font-size: 30px;">Karthikeyan P</span>
         </div>
-
         <!-- Hamburger icon -->
-        <div class="hamburger" id="hamburger">
+        <div class="hamburger" id="hamburger" tabindex="0" aria-label="Menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
-
-            <!-- Menu -->
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
         </div>
+        <!-- Menu -->
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
     </div>
 </nav>
 
@@ -134,10 +132,27 @@
 </style>
 
 <script>
+    // Hamburger menu toggle for mobile
     const hamburger = document.getElementById('hamburger');
-
+    const navMenu = document.getElementById('nav-menu');
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+    });
+    // Close menu on link click (mobile)
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+        });
+    });
+    // Custom cursor effect
+    const cursor = document.querySelector('.custom-cursor');
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
     });
 </script>
     <!-- Hero Section -->
