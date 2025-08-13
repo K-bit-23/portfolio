@@ -285,120 +285,133 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title gradient-text">Technical Skills</h2>
-            <p class="section-subtitle">Technologies and tools I work with</p>
-        </div>
-            <div class="skill-progress" style="width: 60%;"></div>
-            <div class="skill-category">
-                <h3>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="IoT" style="width:32px;vertical-align:middle;margin-right:8px;">
-                    IoT & Embedded
-                </h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <span>ESP8266 <small>(Intermediate)</small></span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Arduino <small>(Intermediate)</small></span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>MQTT & Sensors <small>(Intermediate)</small></span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 65%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" style="width:32px;vertical-align:middle;margin-right:8px;">
-                    Programming
-                </h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <span>Python <small>(Intermediate)</small></span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>JavaScript <small>(Intermediate)</small></span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 60%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>HTML/CSS <small>(Intermediate)</small></span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 65%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" style="width:32px;vertical-align:middle;margin-right:8px;">
-                    Web Development
-                </h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <span>Flask <small>(Intermediate)</small></span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 65%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Web Dashboards <small>(Intermediate)</small></span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Real-time Systems <small>(Intermediate)</small></span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 60%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" style="width:32px;vertical-align:middle;margin-right:8px;">
-                    Tools & Platforms
-                </h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <span>Google Cloud <small>(Intermediate)</small></span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 60%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Machine Learning <small>(Intermediate)</small></span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 60%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Cybersecurity <small>(Intermediate)</small></span>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 40%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title gradient-text">Technical Skills</h2>
+      <p class="section-subtitle">Technologies and tools I work with</p>
     </div>
+    <div class="skills-card-grid">
+      <!-- IoT & Embedded -->
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="IoT" />
+          <h3>IoT & Embedded</h3>
+        </div>
+        <ul>
+          <li><strong>ESP8266</strong> <span>(Intermediate)</span></li>
+          <li><strong>Arduino</strong> <span>(Intermediate)</span></li>
+          <li><strong>MQTT & Sensors</strong> <span>(Intermediate)</span></li>
+        </ul>
+      </div>
+      <!-- Programming -->
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+          <h3>Programming</h3>
+        </div>
+        <ul>
+          <li><strong>Python</strong> <span>(Intermediate)</span></li>
+          <li><strong>JavaScript</strong> <span>(Intermediate)</span></li>
+          <li><strong>HTML/CSS</strong> <span>(Intermediate)</span></li>
+        </ul>
+      </div>
+      <!-- Web Development -->
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" />
+          <h3>Web Development</h3>
+        </div>
+        <ul>
+          <li><strong>Flask</strong> <span>(Intermediate)</span></li>
+          <li><strong>Web Dashboards</strong> <span>(Intermediate)</span></li>
+          <li><strong>Real-time Systems</strong> <span>(Intermediate)</span></li>
+        </ul>
+      </div>
+      <!-- Tools & Platforms -->
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" />
+          <h3>Tools & Platforms</h3>
+        </div>
+        <ul>
+          <li><strong>Google Cloud</strong> <span>(Intermediate)</span></li>
+          <li><strong>Machine Learning</strong> <span>(Intermediate)</span></li>
+          <li><strong>Cybersecurity</strong> <span>(Intermediate)</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
-
+<style>
+/* Skill Cards Grid */
+.skills-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.skill-card {
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,224,255,0.10);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+  border: 2px solid transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px #00e0ff44;
+  border: 2px solid #00e0ff;
+  background: rgba(0, 32, 48, 0.95);
+}
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.skill-card-header img {
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 0 8px #00e0ff88);
+}
+.skill-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #00e0ff;
+  font-weight: bold;
+}
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.skill-card li {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.skill-card li span {
+  color: #00e0ff;
+  font-size: 0.95em;
+  margin-left: 0.5em;
+}
+@media (max-width: 600px) {
+  .skills-card-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .skill-card {
+    padding: 1.2rem 1rem;
+  }
+}
+</style>
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
