@@ -879,6 +879,24 @@ body {
     color: var(--text-muted);
 }
 
+/* Custom Cursor */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    border: 2px solid #00e0ff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: background 0.2s, border 0.2s, transform 0.08s;
+    box-shadow: 0 0 16px 4px #00e0ff44;
+    background: rgba(0,224,255,0.08);
+    mix-blend-mode: lighten;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
