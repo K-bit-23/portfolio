@@ -20,12 +20,13 @@ const navLinks = document.querySelectorAll('.nav-link');
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    navMenu.classList.toggle('fade-in');
 });
 
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        navMenu.classList.remove('active', 'fade-in');
     });
 });
 
@@ -54,9 +55,7 @@ window.addEventListener('scroll', () => {
 const typingText = document.querySelector('.typing-text');
 if (typingText) {
     const text = 'Developer & Innovator';
-    const originalText = typingText.textContent;
     typingText.textContent = '';
-    
     let i = 0;
     function typeWriter() {
         if (i < text.length) {
@@ -71,7 +70,6 @@ if (typingText) {
             }, 3000);
         }
     }
-    
     setTimeout(typeWriter, 1000);
 }
 
@@ -79,7 +77,6 @@ if (typingText) {
 function createParticles() {
     const particlesContainer = document.getElementById('particles');
     const particleCount = 50;
-
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
@@ -94,7 +91,6 @@ function createParticles() {
 // Skills animation
 function animateSkills() {
     const skillBars = document.querySelectorAll('.skill-progress');
-    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -104,16 +100,12 @@ function animateSkills() {
             }
         });
     }, { threshold: 0.5 });
-
-    skillBars.forEach(bar => {
-        observer.observe(bar);
-    });
+    skillBars.forEach(bar => observer.observe(bar));
 }
 
 // Scroll animations
 function initScrollAnimations() {
     const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
-    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -121,10 +113,7 @@ function initScrollAnimations() {
             }
         });
     }, { threshold: 0.1 });
-
-    animatedElements.forEach(el => {
-        observer.observe(el);
-    });
+    animatedElements.forEach(el => observer.observe(el));
 }
 
 // Form submission
@@ -132,25 +121,13 @@ const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const formObject = {};
-        formData.forEach((value, key) => {
-            formObject[key] = value;
-        });
-        
-        // Show success message
         const submitBtn = this.querySelector('.btn-primary');
         const originalText = submitBtn.innerHTML;
-        
         submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
         submitBtn.style.pointerEvents = 'none';
-        
         setTimeout(() => {
             submitBtn.innerHTML = '<span>Message Sent!</span><i class="fas fa-check"></i>';
             submitBtn.style.background = 'var(--secondary-gradient)';
-            
             setTimeout(() => {
                 submitBtn.innerHTML = originalText;
                 submitBtn.style.background = 'var(--primary-gradient)';
@@ -173,101 +150,34 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Add hover effects to project cards
+// Hover effects for project cards
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-10px) rotateX(5deg)';
         this.style.transition = 'all 0.3s ease';
     });
-    
     card.addEventListener('mouseleave', function() {
         this.style.transform = 'translateY(0) rotateX(0)';
     });
 });
 
-// Add ripple effect to buttons
+// Ripple effect
 function addRippleEffect() {
     const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
-    
     buttons.forEach(button => {
         button.addEventListener('click', function(e) {
             const ripple = document.createElement('span');
             const rect = this.getBoundingClientRect();
             const size = Math.max(rect.width, rect.height);
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
-            
             ripple.style.width = ripple.style.height = size + 'px';
-            ripple.style.left = x + 'px';
-            ripple.style.top = y + 'px';
+            ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+            ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
             ripple.classList.add('ripple');
-            
             this.appendChild(ripple);
-            
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
+            setTimeout(() => ripple.remove(), 600);
         });
     });
 }
-
-// Add CSS for ripple effect
-const rippleCSS = `
-    .btn-primary, .btn-secondary {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .ripple {
-        position: absolute;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        pointer-events: none;
-        animation: ripple-animation 0.6s ease-out;
-    }
-    
-    @keyframes ripple-animation {
-        0% {
-            transform: scale(0);
-            opacity: 1;
-        }
-        100% {
-            transform: scale(1);
-            opacity: 0;
-        }
-    }
-`;
-
-const style = document.createElement('style');
-style.textContent = rippleCSS;
-document.head.appendChild(style);
-
-// Initialize everything when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    createParticles();
-    animateSkills();
-    initScrollAnimations();
-    addRippleEffect();
-    
-    // Add fade-in classes to elements
-    document.querySelectorAll('.section-header').forEach(el => el.classList.add('fade-in'));
-    document.querySelectorAll('.project-card').forEach(el => el.classList.add('fade-in'));
-    document.querySelectorAll('.skill-category').forEach(el => el.classList.add('fade-in'));
-    document.querySelectorAll('.timeline-item').forEach((el, index) => {
-        el.classList.add(index % 2 === 0 ? 'slide-in-left' : 'slide-in-right');
-    });
-});
-
-// Loading animation
-window.addEventListener('load', function() {
-    const loading = document.querySelector('.loading');
-    if (loading) {
-        loading.classList.add('hidden');
-        setTimeout(() => {
-            loading.remove();
-        }, 500);
-    }
-});
 
 // Cursor trail effect
 document.addEventListener('mousemove', function(e) {
@@ -275,45 +185,11 @@ document.addEventListener('mousemove', function(e) {
     trail.className = 'cursor-trail';
     trail.style.left = e.clientX + 'px';
     trail.style.top = e.clientY + 'px';
-    
     document.body.appendChild(trail);
-    
-    setTimeout(() => {
-        trail.remove();
-    }, 500);
+    setTimeout(() => trail.remove(), 500);
 });
 
-// Add cursor trail CSS
-const cursorCSS = `
-    .cursor-trail {
-        position: fixed;
-        width: 10px;
-        height: 10px;
-        background: var(--primary-gradient);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        opacity: 0.7;
-        animation: cursor-trail-fade 0.5s ease-out forwards;
-    }
-    
-    @keyframes cursor-trail-fade {
-        0% {
-            transform: scale(1);
-            opacity: 0.7;
-        }
-        100% {
-            transform: scale(0);
-            opacity: 0;
-        }
-    }
-`;
-
-const cursorStyle = document.createElement('style');
-cursorStyle.textContent = cursorCSS;
-document.head.appendChild(cursorStyle);
-
-// Parallax effect for hero section
+// Parallax effect
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const parallax = document.querySelector('.iot-network');
@@ -323,43 +199,74 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Smooth reveal animations for sections
+// Smooth reveal animations
 const revealElements = document.querySelectorAll('section');
 const revealElementsOnScroll = () => {
     const windowHeight = window.innerHeight;
     const elementVisible = 150;
-
     revealElements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
-        
         if (elementTop < windowHeight - elementVisible) {
             element.classList.add('revealed');
         }
     });
 };
-
 window.addEventListener('scroll', revealElementsOnScroll);
-revealElementsOnScroll(); // Check on page load
+revealElementsOnScroll();
 
-// Add reveal CSS
-const revealCSS = `
-    section {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease;
+// Loading animation with progress bar
+window.addEventListener('load', function() {
+    const loading = document.querySelector('.loading');
+    const progressBar = document.createElement('div');
+    progressBar.id = 'progress-bar';
+    document.body.appendChild(progressBar);
+
+    let width = 0;
+    const interval = setInterval(() => {
+        if (width >= 90) clearInterval(interval);
+        else {
+            width += 10;
+            progressBar.style.width = width + '%';
+        }
+    }, 150);
+
+    setTimeout(() => {
+        progressBar.style.width = '100%';
+        setTimeout(() => {
+            progressBar.style.opacity = '0';
+        }, 400);
+    }, 500);
+
+    if (loading) {
+        loading.classList.add('hidden');
+        setTimeout(() => loading.remove(), 500);
     }
-    
-    section.revealed {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    section:first-child {
-        opacity: 1;
-        transform: translateY(0);
-    }
+});
+
+// Init
+document.addEventListener('DOMContentLoaded', function() {
+    createParticles();
+    animateSkills();
+    initScrollAnimations();
+    addRippleEffect();
+    document.querySelectorAll('.section-header, .project-card, .skill-category').forEach(el => el.classList.add('fade-in'));
+    document.querySelectorAll('.timeline-item').forEach((el, index) => {
+        el.classList.add(index % 2 === 0 ? 'slide-in-left' : 'slide-in-right');
+    });
+});
+
+// Inject CSS for effects
+const style = document.createElement('style');
+style.textContent = `
+    .btn-primary, .btn-secondary { position: relative; overflow: hidden; }
+    .ripple { position: absolute; background: rgba(255,255,255,0.3); border-radius: 50%; pointer-events: none; animation: ripple-animation 0.6s ease-out; }
+    @keyframes ripple-animation { 0% { transform: scale(0); opacity: 1; } 100% { transform: scale(1); opacity: 0; } }
+    .cursor-trail { position: fixed; width: 10px; height: 10px; background: var(--primary-gradient); border-radius: 50%; pointer-events: none; z-index: 9999; opacity: 0.7; animation: cursor-trail-fade 0.5s ease-out forwards; }
+    @keyframes cursor-trail-fade { 0% { transform: scale(1); opacity: 0.7; } 100% { transform: scale(0); opacity: 0; } }
+    section { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+    section.revealed { opacity: 1; transform: translateY(0); }
+    #progress-bar { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, #00e0ff, #0088ff); width: 0%; z-index: 10000; transition: width 0.3s ease, opacity 0.5s ease; }
+    .nav-menu.fade-in { animation: fadeIn 0.3s ease forwards; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 `;
-
-const revealStyle = document.createElement('style');
-revealStyle.textContent = revealCSS;
-document.head.appendChild(revealStyle);
+document.head.appendChild(style);
