@@ -42,20 +42,104 @@
             <span></span>
             <span></span>
             <span></span>
-        </div>
 
-        <!-- Menu -->
-        <ul class="nav-menu" id="nav-menu">
-            <li><a href="#home" class="nav-link active">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#education" class="nav-link">Education</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
+            <!-- Menu -->
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
 
+<style>
+    /* Navbar */
+    .nav {
+        background: rgba(0, 0, 0, 0.85);
+        color: white;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    /* Hamburger */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        position: relative;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #00e0ff;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* Menu hidden by default */
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        border-radius: 8px;
+        list-style: none;
+        box-shadow: 0 4px 8px rgba(0, 224, 255, 0.4);
+    }
+
+    /* Show menu when active */
+    .hamburger.active .nav-menu {
+        display: flex;
+    }
+
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .nav-link:hover {
+        color: #00e0ff;
+    }
+
+    /* X animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+</style>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+    });
+</script>
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
