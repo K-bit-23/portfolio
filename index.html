@@ -675,6 +675,9 @@
     const canvas = document.getElementById('mouse-line-canvas');
     const ctx = canvas.getContext('2d');
     let points = [];
+    let lastMoveTime = Date.now();
+    let lineVisible = true;
+    const LINE_FADE_MS = 1200; // Line visible for 1.2 seconds after last move
 
     function resizeCanvas() {
         canvas.width = window.innerWidth;
@@ -685,18 +688,19 @@
 
     document.addEventListener('mousemove', (e) => {
         addMouseLine(e.clientX, e.clientY);
+        lastMoveTime = Date.now();
+        lineVisible = true;
     });
 
     function addMouseLine(x, y) {
         points.push({x, y, time: Date.now()});
         // Remove old points for fading effect
         points = points.filter(p => Date.now() - p.time < 700);
-        drawLine();
     }
 
     function drawLine() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        if (points.length < 2) return;
+        if (!lineVisible || points.length < 2) return;
         ctx.save();
         ctx.beginPath();
         ctx.moveTo(points[0].x, points[0].y);
@@ -711,8 +715,13 @@
         ctx.restore();
     }
 
-    // Animate line fade
+    // Animate line fade and hide after a few seconds
     function animateLine() {
+        // Hide line if no mousemove for LINE_FADE_MS
+        if (Date.now() - lastMoveTime > LINE_FADE_MS) {
+            lineVisible = false;
+            points = [];
+        }
         drawLine();
         requestAnimationFrame(animateLine);
     }
