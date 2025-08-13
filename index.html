@@ -669,51 +669,8 @@
         </div>
     </footer>
 
-<canvas id="mouse-line-canvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9998;"></canvas>
-<script>
-    // Mouse "follow the line" effect (no round cursor)
-    const canvas = document.getElementById('mouse-line-canvas');
-    const ctx = canvas.getContext('2d');
-    let points = [];
-    let lastMoveTime = Date.now();
-    let lineVisible = true;
-    const LINE_FADE_MS = 500; // Line visible for 0.5 seconds after last move
 
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    document.addEventListener('mousemove', (e) => {
-        addMouseLine(e.clientX, e.clientY);
-        lastMoveTime = Date.now();
-        lineVisible = true;
-    });
-
-    function addMouseLine(x, y) {
-        points.push({x, y, time: Date.now()});
-        // Remove old points for fading effect
-        points = points.filter(p => Date.now() - p.time < 700);
-    }
-
-    function drawLine() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        if (!lineVisible || points.length < 2) return;
-        ctx.save();
-        ctx.beginPath();
-        ctx.moveTo(points[0].x, points[0].y);
-        for (let i = 1; i < points.length; i++) {
-            ctx.lineTo(points[i].x, points[i].y);
-        }
-        ctx.strokeStyle = 'rgba(0,224,255,0.7)';
-        ctx.lineWidth = 3;
-        ctx.shadowColor = '#00e0ff';
-        ctx.shadowBlur = 8;
-        ctx.stroke();
-        ctx.restore();
-    }
+  
 
  
 </script>
