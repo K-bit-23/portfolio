@@ -31,162 +31,154 @@
     <div id="particles"></div>
     
     <!-- Navigation -->
-<nav class="nav">
-    <div class="nav-container">
-        <div class="nav-logo">
-            <span class="gradient-text" style="font-size: 30px;">Karthikeyan P</span>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="gradient-text" style="font-size: 30px;">Karthikeyan P</span>
+            </div>
+            <!-- Hamburger icon -->
+            <div class="hamburger" id="hamburger" tabindex="0" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Menu -->
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
         </div>
-        <!-- Hamburger icon -->
-        <div class="hamburger" id="hamburger" tabindex="0" aria-label="Menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <!-- Menu -->
-        <ul class="nav-menu" id="nav-menu">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#education" class="nav-link">Education</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-    </div>
-</nav>
-<style>
-    /* Navbar */
-    .nav {
-        background: rgba(0, 0, 0, 0.85);
-        color: white;
-        padding: 10px 20px;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
-
-    .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    /* Hamburger */
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        gap: 5px;
-        position: relative;
-        z-index: 1100;
-    }
-
-    .hamburger span {
-        width: 25px;
-        height: 3px;
-        background: #00e0ff;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-    }
-
-    /* Menu hidden by default */
-    .nav-menu {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-        align-items: center;
-        margin: 0;
-        padding: 0;
-    }
-
-    .nav-link {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        padding: 0.5rem 1rem;
-        border-radius: 8px;
-        transition: background 0.2s, color 0.2s;
-    }
-
-    .nav-link:hover,
-    .nav-link.active {
-        color: #00e0ff;
-        background: rgba(0,224,255,0.08);
-    }
-
-    /* Hamburger active X animation */
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    /* Responsive styles */
-    @media (max-width: 900px) {
-        .nav-menu {
-            position: fixed;
-            top: 60px;
-            right: -100vw;
-            width: 80vw;
-            max-width: 320px;
-            height: calc(100vh - 60px);
-            background: rgba(0, 0, 0, 0.98);
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0;
-            padding: 2rem 1.5rem;
-            border-radius: 0 0 0 16px;
-            box-shadow: 0 4px 24px rgba(0,224,255,0.12);
-            transition: right 0.3s;
-            z-index: 1099;
+    </nav>
+    <style>
+        /* Navbar */
+        .nav {
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .nav-menu.active {
-            right: 0;
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            position: relative;
+            z-index: 1100;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #00e0ff;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        /* Menu hidden by default */
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+            margin: 0;
+            padding: 0;
         }
         .nav-link {
-            width: 100%;
-            text-align: left;
-            font-size: 1.1rem;
-            margin: 0.5rem 0;
-            padding: 1rem 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
         }
-        .hamburger {
-            display: flex;
+        .nav-link:hover,
+        .nav-link.active {
+            color: #00e0ff;
+            background: rgba(0,224,255,0.08);
         }
-    }
-</style>
-<script>
-    // Hamburger menu toggle for mobile
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
-    });
-    // Close menu on link click (mobile)
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
+        /* Hamburger active X animation */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        /* Responsive styles */
+        @media (max-width: 900px) {
+            .nav-menu {
+                position: fixed;
+                top: 60px;
+                right: -100vw;
+                width: 80vw;
+                max-width: 320px;
+                height: calc(100vh - 60px);
+                background: rgba(0, 0, 0, 0.98);
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                padding: 2rem 1.5rem;
+                border-radius: 0 0 0 16px;
+                box-shadow: 0 4px 24px rgba(0,224,255,0.12);
+                transition: right 0.3s;
+                z-index: 1099;
+            }
+            .nav-menu.active {
+                right: 0;
+            }
+            .nav-link {
+                width: 100%;
+                text-align: left;
+                font-size: 1.1rem;
+                margin: 0.5rem 0;
+                padding: 1rem 0.5rem;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+    <script>
+        // Hamburger menu toggle for mobile
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
         });
-    });
-    // Optional: Close menu if window is resized to desktop
-    window.addEventListener('resize', () => {
-        if(window.innerWidth > 900) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-        }
-    });
-</script>
+        // Close menu on link click (mobile)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+        // Optional: Close menu if window is resized to desktop
+        window.addEventListener('resize', () => {
+            if(window.innerWidth > 900) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
@@ -285,182 +277,182 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title gradient-text">Technical Skills</h2>
-      <p class="section-subtitle">Technologies and tools I work with</p>
-    </div>
-    <div class="skills-card-grid">
-      <!-- IoT & Embedded -->
-      <div class="skill-card iot-card">
-        <div class="skill-card-header">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="IoT" />
-          <h3>IoT & Embedded</h3>
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title gradient-text">Technical Skills</h2>
+          <p class="section-subtitle">Technologies and tools I work with</p>
         </div>
-        <ul>
-          <li>
-            <span>ESP8266</span>
-            <div class="progress-bar iot"><div style="width:80%"></div></div>
-          </li>
-          <li>
-            <span>Arduino</span>
-            <div class="progress-bar iot"><div style="width:75%"></div></div>
-          </li>
-          <li>
-            <span>MQTT & Sensors</span>
-            <div class="progress-bar iot"><div style="width:70%"></div></div>
-          </li>
-        </ul>
-      </div>
-      <!-- Programming -->
-      <div class="skill-card prog-card">
-        <div class="skill-card-header">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
-          <h3>Programming</h3>
+        <div class="skills-card-grid">
+          <!-- IoT & Embedded -->
+          <div class="skill-card iot-card">
+            <div class="skill-card-header">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="IoT" />
+              <h3>IoT & Embedded</h3>
+            </div>
+            <ul>
+              <li>
+                <span>ESP8266</span>
+                <div class="progress-bar iot"><div style="width:80%"></div></div>
+              </li>
+              <li>
+                <span>Arduino</span>
+                <div class="progress-bar iot"><div style="width:75%"></div></div>
+              </li>
+              <li>
+                <span>MQTT & Sensors</span>
+                <div class="progress-bar iot"><div style="width:70%"></div></div>
+              </li>
+            </ul>
+          </div>
+          <!-- Programming -->
+          <div class="skill-card prog-card">
+            <div class="skill-card-header">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+              <h3>Programming</h3>
+            </div>
+            <ul>
+              <li>
+                <span>Python</span>
+                <div class="progress-bar prog"><div style="width:80%"></div></div>
+              </li>
+              <li>
+                <span>JavaScript</span>
+                <div class="progress-bar prog"><div style="width:70%"></div></div>
+              </li>
+              <li>
+                <span>HTML/CSS</span>
+                <div class="progress-bar prog"><div style="width:75%"></div></div>
+              </li>
+            </ul>
+          </div>
+          <!-- Web Development -->
+          <div class="skill-card web-card">
+            <div class="skill-card-header">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" />
+              <h3>Web Development</h3>
+            </div>
+            <ul>
+              <li>
+                <span>Flask</span>
+                <div class="progress-bar web"><div style="width:70%"></div></div>
+              </li>
+              <li>
+                <span>Web Dashboards</span>
+                <div class="progress-bar web"><div style="width:75%"></div></div>
+              </li>
+              <li>
+                <span>Real-time Systems</span>
+                <div class="progress-bar web"><div style="width:65%"></div></div>
+              </li>
+            </ul>
+          </div>
+          <!-- Tools & Platforms -->
+          <div class="skill-card tools-card">
+            <div class="skill-card-header">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" />
+              <h3>Tools & Platforms</h3>
+            </div>
+            <ul>
+              <li>
+                <span>Google Cloud</span>
+                <div class="progress-bar tools"><div style="width:70%"></div></div>
+              </li>
+              <li>
+                <span>Machine Learning</span>
+                <div class="progress-bar tools"><div style="width:65%"></div></div>
+              </li>
+              <li>
+                <span>Cybersecurity</span>
+                <div class="progress-bar tools"><div style="width:60%"></div></div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <ul>
-          <li>
-            <span>Python</span>
-            <div class="progress-bar prog"><div style="width:80%"></div></div>
-          </li>
-          <li>
-            <span>JavaScript</span>
-            <div class="progress-bar prog"><div style="width:70%"></div></div>
-          </li>
-          <li>
-            <span>HTML/CSS</span>
-            <div class="progress-bar prog"><div style="width:75%"></div></div>
-          </li>
-        </ul>
       </div>
-      <!-- Web Development -->
-      <div class="skill-card web-card">
-        <div class="skill-card-header">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" />
-          <h3>Web Development</h3>
-        </div>
-        <ul>
-          <li>
-            <span>Flask</span>
-            <div class="progress-bar web"><div style="width:70%"></div></div>
-          </li>
-          <li>
-            <span>Web Dashboards</span>
-            <div class="progress-bar web"><div style="width:75%"></div></div>
-          </li>
-          <li>
-            <span>Real-time Systems</span>
-            <div class="progress-bar web"><div style="width:65%"></div></div>
-          </li>
-        </ul>
-      </div>
-      <!-- Tools & Platforms -->
-      <div class="skill-card tools-card">
-        <div class="skill-card-header">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" />
-          <h3>Tools & Platforms</h3>
-        </div>
-        <ul>
-          <li>
-            <span>Google Cloud</span>
-            <div class="progress-bar tools"><div style="width:70%"></div></div>
-          </li>
-          <li>
-            <span>Machine Learning</span>
-            <div class="progress-bar tools"><div style="width:65%"></div></div>
-          </li>
-          <li>
-            <span>Cybersecurity</span>
-            <div class="progress-bar tools"><div style="width:60%"></div></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-<style>
-/* Skill Cards Grid */
-.skills-card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-.skill-card {
-  background: rgba(0, 0, 0, 0.85);
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,224,255,0.10);
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
-  transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
-  border: 2px solid transparent;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-.skill-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 32px #00e0ff44;
-  border: 2px solid #00e0ff;
-  background: rgba(0, 32, 48, 0.95);
-}
-.skill-card-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-.skill-card-header img {
-  width: 36px;
-  height: 36px;
-  filter: drop-shadow(0 0 8px #00e0ff88);
-}
-.skill-card h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #00e0ff;
-  font-weight: bold;
-}
-.skill-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.skill-card li {
-  font-size: 1rem;
-  color: #fff;
-  margin-bottom: 0.7rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.skill-card li span {
-  color: #00e0ff;
-  font-size: 0.95em;
-  margin-left: 0.5em;
-}
-.progress-bar {
-  width: 100%;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
-}
-.progress-bar div {
-  height: 100%;
-  background: #00e0ff;
-  border-radius: 4px;
-}
-@media (max-width: 600px) {
-  .skills-card-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .skill-card {
-    padding: 1.2rem 1rem;
-  }
-}
-</style>
+    </section>
+    <style>
+    /* Skill Cards Grid */
+    .skills-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .skill-card {
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,224,255,0.10);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+      border: 2px solid transparent;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .skill-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 32px #00e0ff44;
+      border: 2px solid #00e0ff;
+      background: rgba(0, 32, 48, 0.95);
+    }
+    .skill-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .skill-card-header img {
+      width: 36px;
+      height: 36px;
+      filter: drop-shadow(0 0 8px #00e0ff88);
+    }
+    .skill-card h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #00e0ff;
+      font-weight: bold;
+    }
+    .skill-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .skill-card li {
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 0.7rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .skill-card li span {
+      color: #00e0ff;
+      font-size: 0.95em;
+      margin-left: 0.5em;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+    .progress-bar div {
+      height: 100%;
+      background: #00e0ff;
+      border-radius: 4px;
+    }
+    @media (max-width: 600px) {
+      .skills-card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .skill-card {
+        padding: 1.2rem 1rem;
+      }
+    }
+    </style>
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
@@ -658,7 +650,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title gradient-text">Get In Touch</h2>
-                <p class="section-subtitle">Let's discuss your next  projects</p>
+                <p class="section-subtitle">Let's discuss your next projects</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
@@ -670,51 +662,35 @@
                         </div>
                     </div>
                     <div class="contact-item">
+                        <i class="fas fa-phone"></i>
                         <div>
-                       <p>
-    <a href="https://wa.me/919566723397" target="_blank" rel="noopener noreferrer"> <i class="fas fa-phone"></i></a></p>
-                                  <h4>Phone</h4>
+                            <h4>Phone</h4>
+                            <a href="https://wa.me/919566723397" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:blue;">+91 95667 23397</a>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                           <a href="https://www.google.com/maps?q=Erode,+Tamil+Nadu,+India" target="_blank" rel="noopener noreferrer"> <h4>Location</h4></a>
+                            <h4>Location</h4>
+                            <span>Erode, Tamil Nadu, India</span>
                         </div>
                     </div>
                 </div>
-              <form class="contact-form" onsubmit="sendWhatsApp(event)">
-    <div class="form-group">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-    </div>
-    <div class="form-group">
-        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
-    </div>
-    <button type="submit" class="btn-primary">
-        Send Message <i class="fas fa-paper-plane"></i>
-    </button>
-</form>
-
-<script>
-function sendWhatsApp(event) {
-    event.preventDefault();
-
-    let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value;
-    let subject = document.getElementById("subject").value;
-    let message = document.getElementById("message").value;
-
-    let phoneNumber = "919566723397"; // Your WhatsApp number (without + sign, country code first)
-    
-    let text = `Name: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AMessage: ${message}`;
-    
-    let url = `https://wa.me/${phoneNumber}?text=${text}`;
-
-    window.open(url, "_blank");
-}
-</script>
-
+                <form class="contact-form" action="mailto:karthikeyankarthikeyan64182@gmail.com" method="POST" enctype="text/plain">
+                    <div class="form-group">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        Send Message <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </section>
@@ -725,23 +701,22 @@ function sendWhatsApp(event) {
             <div class="footer-content">
                 <div class="footer-left">
                     <h3 class="gradient-text">Karthikeyan P</h3>
-                    <p>IoT Developer & Pyhton Developer </p>
+                    <p>IoT Developer & Python Developer</p>
                 </div>
                 <div class="footer-right">
                     <div class="social-links">
                         <a href="https://github.com/K-bit-23" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="linkedin.com/in/karthikeyan-pandiyaraj-351015229" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://linkedin.com/in/karthikeyan-pandiyaraj-351015229" class="social-link"><i class="fab fa-linkedin"></i></a>
                         <a href="https://youtube.com/@karthideepakkd?si=gHjPfgzsGV0Ckt3j" class="social-link"><i class="fab fa-youtube"></i></a>
                         <a href="mailto:karthikeyankarthikeyan64182@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-                         <a href="https://drive.google.com/file/d/19DDhox8Liq8kR-O_6ifWuwsxXIpO9zcI/view?usp=drive_link" class="social-link" title="Download Resume" download><i class="fas fa-file-arrow-down"></i></a>       
+                        <a href="https://drive.google.com/file/d/19DDhox8Liq8kR-O_6ifWuwsxXIpO9zcI/view?usp=drive_link" class="social-link" title="Download Resume" download><i class="fas fa-file-arrow-down"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy;  Karthikeyan P. All rights reserved.</p>
+                <p>&copy; Karthikeyan P. All rights reserved.</p>
             </div>
         </div>
     </footer>
-</script>
 </body>
 </html>
