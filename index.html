@@ -671,12 +671,9 @@
                     </div>
                     <div class="contact-item">
                         <div>
-                            <h4>Phone</h4>
-                            <p>
-    <a href="https://wa.me/919566723397" target="_blank" rel="noopener noreferrer"> <i class="fas fa-phone"></i>
-       
-    </a>
-</p>
+                       <p>
+    <a href="https://wa.me/919566723397" target="_blank" rel="noopener noreferrer"> <i class="fas fa-phone"></i></a></p>
+                                  <h4>Phone</h4>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -686,21 +683,38 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" action="mailto:karthikeyankarthikeyan64182@gmail.com" method="POST" enctype="text/plain">
-                    <div class="form-group">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="Subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="Message" placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary">
-                        Send Message <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
+              <form class="contact-form" onsubmit="sendWhatsApp(event)">
+    <div class="form-group">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+    </div>
+    <div class="form-group">
+        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn-primary">
+        Send Message <i class="fas fa-paper-plane"></i>
+    </button>
+</form>
+
+<script>
+function sendWhatsApp(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let subject = document.getElementById("subject").value;
+    let message = document.getElementById("message").value;
+
+    let phoneNumber = "919566723397"; // Your WhatsApp number (without + sign, country code first)
+    
+    let text = `Name: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AMessage: ${message}`;
+    
+    let url = `https://wa.me/${phoneNumber}?text=${text}`;
+
+    window.open(url, "_blank");
+}
+</script>
+
             </div>
         </div>
     </section>
