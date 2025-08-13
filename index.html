@@ -669,33 +669,9 @@
         </div>
     </footer>
 
-    <div class="custom-cursor"></div>
 <canvas id="mouse-line-canvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9998;"></canvas>
 <script>
-    // Custom cursor movement
-    const cursor = document.querySelector('.custom-cursor');
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        addMouseLine(e.clientX, e.clientY);
-    });
-
-    // Cursor hover effect on interactive elements
-    const hoverTargets = document.querySelectorAll('a, button, .nav-link, .btn-primary, .btn-secondary');
-    hoverTargets.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-            cursor.style.background = 'rgba(255,0,204,0.18)';
-            cursor.style.borderColor = '#fff';
-        });
-        el.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-            cursor.style.background = 'rgba(255,0,204,0.08)';
-            cursor.style.borderColor = '#ff00cc';
-        });
-    });
-
-    // Mouse "follow the line" effect
+    // Mouse "follow the line" effect (no round cursor)
     const canvas = document.getElementById('mouse-line-canvas');
     const ctx = canvas.getContext('2d');
     let points = [];
@@ -706,6 +682,10 @@
     }
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
+
+    document.addEventListener('mousemove', (e) => {
+        addMouseLine(e.clientX, e.clientY);
+    });
 
     function addMouseLine(x, y) {
         points.push({x, y, time: Date.now()});
@@ -723,7 +703,7 @@
         for (let i = 1; i < points.length; i++) {
             ctx.lineTo(points[i].x, points[i].y);
         }
-        ctx.strokeStyle = 'rgba(0,224,255,0.5)';
+        ctx.strokeStyle = 'rgba(0,224,255,0.7)';
         ctx.lineWidth = 3;
         ctx.shadowColor = '#00e0ff';
         ctx.shadowBlur = 8;
