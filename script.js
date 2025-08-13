@@ -269,50 +269,6 @@ window.addEventListener('load', function() {
     }
 });
 
-// Cursor trail effect
-document.addEventListener('mousemove', function(e) {
-    const trail = document.createElement('div');
-    trail.className = 'cursor-trail';
-    trail.style.left = e.clientX + 'px';
-    trail.style.top = e.clientY + 'px';
-    
-    document.body.appendChild(trail);
-    
-    setTimeout(() => {
-        trail.remove();
-    }, 500);
-});
-
-// Add cursor trail CSS
-const cursorCSS = `
-    .cursor-trail {
-        position: fixed;
-        width: 10px;
-        height: 10px;
-        background: var(--primary-gradient);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        opacity: 0.7;
-        animation: cursor-trail-fade 0.5s ease-out forwards;
-    }
-    
-    @keyframes cursor-trail-fade {
-        0% {
-            transform: scale(1);
-            opacity: 0.7;
-        }
-        100% {
-            transform: scale(0);
-            opacity: 0;
-        }
-    }
-`;
-
-const cursorStyle = document.createElement('style');
-cursorStyle.textContent = cursorCSS;
-document.head.appendChild(cursorStyle);
-
 // Parallax effect for hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
@@ -383,5 +339,78 @@ hoverTargets.forEach(el => {
         cursor.style.transform = 'translate(-50%, -50%) scale(1)';
         cursor.style.background = 'rgba(255,0,204,0.08)';
         cursor.style.borderColor = '#ff00cc';
+    });
+});
+
+// --- REMOVE CURSOR TRAIL EFFECT ---
+// (Remove or comment out this block)
+/*
+document.addEventListener('mousemove', function(e) {
+    const trail = document.createElement('div');
+    trail.className = 'cursor-trail';
+    trail.style.left = e.clientX + 'px';
+    trail.style.top = e.clientY + 'px';
+    document.body.appendChild(trail);
+    setTimeout(() => {
+        trail.remove();
+    }, 500);
+});
+*/
+
+// --- REMOVE CURSOR TRAIL CSS ---
+// (Remove or comment out this block)
+/*
+const cursorCSS = `
+    .cursor-trail {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background: var(--primary-gradient);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.7;
+        animation: cursor-trail-fade 0.5s ease-out forwards;
+    }
+    @keyframes cursor-trail-fade {
+        0% {
+            transform: scale(1);
+            opacity: 0.7;
+        }
+        100% {
+            transform: scale(0);
+            opacity: 0;
+        }
+    }
+`;
+const cursorStyle = document.createElement('style');
+cursorStyle.textContent = cursorCSS;
+document.head.appendChild(cursorStyle);
+*/
+
+// --- ADD MOUSE EFFECTS (e.g., parallax on hero visual, highlight on cards) ---
+
+// Parallax effect for hero visual (IoT network)
+window.addEventListener('mousemove', function(e) {
+    const parallax = document.querySelector('.iot-network');
+    if (parallax) {
+        const x = (window.innerWidth / 2 - e.clientX) / 40;
+        const y = (window.innerHeight / 2 - e.clientY) / 40;
+        parallax.style.transform = `translate(${x}px, ${y}px)`;
+    }
+});
+
+// Card highlight effect on mousemove
+document.querySelectorAll('.project-card, .skill-category, .highlight-item').forEach(card => {
+    card.addEventListener('mousemove', function(e) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.boxShadow = `0 8px 25px rgba(37,99,235,0.15), 0 0 40px 0 rgba(255,0,204,0.15), 0 0 0 4px rgba(255,0,204,0.08)`;
+        card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,0,204,0.08) 0%, transparent 80%)`;
+    });
+    card.addEventListener('mouseleave', function() {
+        card.style.boxShadow = '';
+        card.style.background = '';
     });
 });
