@@ -715,17 +715,7 @@
         ctx.restore();
     }
 
-    // Animate line fade and hide after a few seconds
-    function animateLine() {
-        // Hide line if no mousemove for LINE_FADE_MS
-        if (Date.now() - lastMoveTime > LINE_FADE_MS) {
-            lineVisible = false;
-            points = [];
-        }
-        drawLine();
-        requestAnimationFrame(animateLine);
-    }
-    animateLine();
+ 
 </script>
 </body>
 </html>
