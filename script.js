@@ -362,4 +362,26 @@ const revealCSS = `
 
 const revealStyle = document.createElement('style');
 revealStyle.textContent = revealCSS;
-document.head.appendChild(revealStyle);  
+document.head.appendChild(revealStyle);
+
+// Custom cursor movement
+const cursor = document.querySelector('.custom-cursor');
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
+
+// Cursor hover effect on interactive elements
+const hoverTargets = document.querySelectorAll('a, button, .nav-link, .btn-primary, .btn-secondary');
+hoverTargets.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        cursor.style.background = 'rgba(255,0,204,0.18)';
+        cursor.style.borderColor = '#fff';
+    });
+    el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursor.style.background = 'rgba(255,0,204,0.08)';
+        cursor.style.borderColor = '#ff00cc';
+    });
+});
