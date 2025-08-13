@@ -292,51 +292,87 @@
     </div>
     <div class="skills-card-grid">
       <!-- IoT & Embedded -->
-      <div class="skill-card">
+      <div class="skill-card iot-card">
         <div class="skill-card-header">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="IoT" />
           <h3>IoT & Embedded</h3>
         </div>
         <ul>
-          <li><strong>ESP8266</strong> <span>(Intermediate)</span></li>
-          <li><strong>Arduino</strong> <span>(Intermediate)</span></li>
-          <li><strong>MQTT & Sensors</strong> <span>(Intermediate)</span></li>
+          <li>
+            <span>ESP8266</span>
+            <div class="progress-bar iot"><div style="width:80%"></div></div>
+          </li>
+          <li>
+            <span>Arduino</span>
+            <div class="progress-bar iot"><div style="width:75%"></div></div>
+          </li>
+          <li>
+            <span>MQTT & Sensors</span>
+            <div class="progress-bar iot"><div style="width:70%"></div></div>
+          </li>
         </ul>
       </div>
       <!-- Programming -->
-      <div class="skill-card">
+      <div class="skill-card prog-card">
         <div class="skill-card-header">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
           <h3>Programming</h3>
         </div>
         <ul>
-          <li><strong>Python</strong> <span>(Intermediate)</span></li>
-          <li><strong>JavaScript</strong> <span>(Intermediate)</span></li>
-          <li><strong>HTML/CSS</strong> <span>(Intermediate)</span></li>
+          <li>
+            <span>Python</span>
+            <div class="progress-bar prog"><div style="width:80%"></div></div>
+          </li>
+          <li>
+            <span>JavaScript</span>
+            <div class="progress-bar prog"><div style="width:70%"></div></div>
+          </li>
+          <li>
+            <span>HTML/CSS</span>
+            <div class="progress-bar prog"><div style="width:75%"></div></div>
+          </li>
         </ul>
       </div>
       <!-- Web Development -->
-      <div class="skill-card">
+      <div class="skill-card web-card">
         <div class="skill-card-header">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" />
           <h3>Web Development</h3>
         </div>
         <ul>
-          <li><strong>Flask</strong> <span>(Intermediate)</span></li>
-          <li><strong>Web Dashboards</strong> <span>(Intermediate)</span></li>
-          <li><strong>Real-time Systems</strong> <span>(Intermediate)</span></li>
+          <li>
+            <span>Flask</span>
+            <div class="progress-bar web"><div style="width:70%"></div></div>
+          </li>
+          <li>
+            <span>Web Dashboards</span>
+            <div class="progress-bar web"><div style="width:75%"></div></div>
+          </li>
+          <li>
+            <span>Real-time Systems</span>
+            <div class="progress-bar web"><div style="width:65%"></div></div>
+          </li>
         </ul>
       </div>
       <!-- Tools & Platforms -->
-      <div class="skill-card">
+      <div class="skill-card tools-card">
         <div class="skill-card-header">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud" />
           <h3>Tools & Platforms</h3>
         </div>
         <ul>
-          <li><strong>Google Cloud</strong> <span>(Intermediate)</span></li>
-          <li><strong>Machine Learning</strong> <span>(Intermediate)</span></li>
-          <li><strong>Cybersecurity</strong> <span>(Intermediate)</span></li>
+          <li>
+            <span>Google Cloud</span>
+            <div class="progress-bar tools"><div style="width:70%"></div></div>
+          </li>
+          <li>
+            <span>Machine Learning</span>
+            <div class="progress-bar tools"><div style="width:65%"></div></div>
+          </li>
+          <li>
+            <span>Cybersecurity</span>
+            <div class="progress-bar tools"><div style="width:60%"></div></div>
+          </li>
         </ul>
       </div>
     </div>
@@ -401,6 +437,19 @@
   color: #00e0ff;
   font-size: 0.95em;
   margin-left: 0.5em;
+}
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.progress-bar div {
+  height: 100%;
+  background: #00e0ff;
+  border-radius: 4px;
 }
 @media (max-width: 600px) {
   .skills-card-grid {
