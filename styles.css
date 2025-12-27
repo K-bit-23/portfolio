@@ -274,8 +274,8 @@ body {
 
 .iot-network {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 280px;
+    height: 280px;
 }
 
 .central-node {
@@ -283,14 +283,14 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
+    width: 55px;
+    height: 55px;
     background: var(--primary-gradient);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     box-shadow: var(--glow-primary);
     animation: pulse 2s infinite;
@@ -303,15 +303,15 @@ body {
 
 .orbit-node {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     background: var(--secondary-gradient);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     box-shadow: var(--glow-secondary);
     animation: orbit 10s infinite linear;
 }
@@ -324,8 +324,8 @@ body {
 .orbit-6 { top: 25%; left: 15%; transform: translate(-50%, -50%); animation-delay: -8.33s; }
 
 @keyframes orbit {
-    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
-    to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+    from { transform: rotate(0deg) translateX(105px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(105px) rotate(-360deg); }
 }
 
 /* Section Styles */
@@ -959,6 +959,24 @@ body {
     .hero-visual {
         margin-top: 2rem;
     }
+    .iot-network {
+        width: 240px;
+        height: 240px;
+    }
+    .central-node {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    .orbit-node {
+        width: 30px;
+        height: 30px;
+        font-size: 0.75rem;
+    }
+    @keyframes orbit {
+        from { transform: rotate(0deg) translateX(85px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(85px) rotate(-360deg); }
+    }
 }
 
 /* Skills, Projects, About, Contact: single column on mobile */
@@ -1014,6 +1032,24 @@ body {
     }
     .custom-cursor {
         display: none;
+    }
+    .iot-network {
+        width: 200px;
+        height: 200px;
+    }
+    .central-node {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    .orbit-node {
+        width: 25px;
+        height: 25px;
+        font-size: 0.65rem;
+    }
+    @keyframes orbit {
+        from { transform: rotate(0deg) translateX(70px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
     }
 }
 
