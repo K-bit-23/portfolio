@@ -27,6 +27,22 @@ const Portfolio: React.FC = () => {
               <p>A cross-platform mobile application that connects volunteers with non-profit organizations.</p>
             </div>
           </div>
+          <div className="bg-white rounded-lg shadow-lg">
+            <img src="https://source.unsplash.com/random/800x603" alt="Blizz Holidays" className="rounded-t-lg" />
+            <div className="p-6">
+              <h3 className="text-2xl font-bold mb-4">Blizz Holidays</h3>
+              <p>A travel and tourism website.</p>
+              <a href="https://blizzholidayzz.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">View Project</a>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg">
+            <img src="https://source.unsplash.com/random/800x604" alt="KY Caterings" className="rounded-t-lg" />
+            <div className="p-6">
+              <h3 className="text-2xl font-bold mb-4">KY Caterings</h3>
+              <p>A catering service website.</p>
+              <a href="https://kycatering-ky.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">View Project</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
