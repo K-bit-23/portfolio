@@ -1,11 +1,11 @@
 import React from 'react';
+import './index.css';
+import Home from './pages/Home';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <p>Start prompting (or editing) to see magic happen :)</p>
-    </div>
+    <Home />
   );
-}
+};
 
 export default App;
