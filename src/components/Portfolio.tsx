@@ -9,22 +9,22 @@ const Portfolio: React.FC = () => {
           <div className="bg-white rounded-lg shadow-lg">
             <img src="https://source.unsplash.com/random/800x600" alt="Project 1" className="rounded-t-lg" />
             <div className="p-6">
-              <h3 className="text-2xl font-bold mb-4">Project 1</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h3 className="text-2xl font-bold mb-4">E-commerce Platform</h3>
+              <p>A full-stack e-commerce solution with a custom backend and a responsive user interface.</p>
             </div>
           </div>
           <div className="bg-white rounded-lg shadow-lg">
             <img src="https://source.unsplash.com/random/800x601" alt="Project 2" className="rounded-t-lg" />
             <div className="p-6">
-              <h3 className="text-2xl font-bold mb-4">Project 2</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h3 className="text-2xl font-bold mb-4">IoT Data Visualization</h3>
+              <p>A web application for visualizing real-time data from IoT devices, built with Python and React.</p>
             </div>
           </div>
           <div className="bg-white rounded-lg shadow-lg">
             <img src="https://source.unsplash.com/random/800x602" alt="Project 3" className="rounded-t-lg" />
             <div className="p-6">
-              <h3 className="text-2xl font-bold mb-4">Project 3</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h3 className="text-2xl font-bold mb-4">Mobile App for Social Good</h3>
+              <p>A cross-platform mobile application that connects volunteers with non-profit organizations.</p>
             </div>
           </div>
         </div>
