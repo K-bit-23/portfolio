@@ -31,10 +31,10 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden">
+    <section id="projects" className="py-12 md:py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

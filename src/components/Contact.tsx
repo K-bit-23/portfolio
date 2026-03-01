@@ -4,10 +4,10 @@ import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className="py-12 md:py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
 
-        <div className="text-center mb-16 px-4">
+        <div className="text-center mb-10 md:mb-16 px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="premium-card space-y-10 md:space-y-12"
+              className="premium-card space-y-8 md:space-y-12"
             >
               {[
                 { icon: <Mail className="text-emerald-500 w-6 h-6" />, title: 'Email Me', value: 'karthikeyankarthikeyan64182@gmail.com', href: 'mailto:karthikeyankarthikeyan64182@gmail.com' },

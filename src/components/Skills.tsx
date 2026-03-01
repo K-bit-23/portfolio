@@ -43,10 +43,10 @@ const Skills: React.FC = () => {
     ];
 
     return (
-        <section id="skills" className="py-32 relative overflow-hidden">
+        <section id="skills" className="py-12 md:py-24 relative overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
 
-                <div className="text-center mb-24">
+                <div className="text-center mb-12 md:mb-24">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

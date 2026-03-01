@@ -1,13 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap } from 'lucide-react';
+import { GraduationCap, Milestone, Circle } from 'lucide-react';
 
 const About: React.FC = () => {
+  const education = [
+    {
+      level: 'Postgraduate',
+      degree: 'Master of Computer Applications',
+      institute: 'Kongu Engineering College',
+      years: '2024 - 2026',
+      status: 'Current Node',
+      details: 'Specializing in Advanced AI and IoT System Architectures.'
+    },
+    {
+      level: 'Undergraduate',
+      degree: 'Bachelor of Computer Applications',
+      institute: 'Sri Ramakrishna Mission Vidyalaya College of Arts & Science',
+      years: '2021 - 2024',
+      status: '8.5 CGPA',
+      details: 'Foundation in Computer Science, Database Management, and IoT basics.'
+    },
+    {
+      level: 'Higher Secondary',
+      degree: 'Computer Science Stream',
+      institute: 'URC Palaniammal Matric Hr. Sec. School',
+      years: '2019 - 2021',
+      status: 'Completed',
+      details: 'Focused on Mathematics and Physics.'
+    }
+  ];
+
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
+    <section id="about" className="py-12 md:py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
 
-        <div className="text-center mb-24">
+        <div className="text-center mb-12 md:mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -23,96 +50,134 @@ const About: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-bold font-orbitron text-white"
           >
-            Behind the <span className="text-gradient">Circuitry</span>
+            The Human <span className="text-emerald-500">Backbone</span>
           </motion.h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
 
-          {/* Visual Element */}
+          {/* Profile Card */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative"
+            className="premium-card relative overflow-hidden group h-full"
           >
-            <div className="premium-card p-8 lg:p-12 relative overflow-hidden group">
-              <div className="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/5 rounded-full blur-[100px]" />
-
-              <div className="space-y-6 relative z-10">
-                <div className="font-mono text-sm space-y-4">
-                  <div className="flex gap-4 p-4 bg-slate-950/50 border border-white/5 rounded-2xl">
-                    <span className="text-emerald-500">01</span>
-                    <span className="text-slate-400">class <span className="text-white">Innovator</span>:</span>
-                  </div>
-                  <div className="flex gap-4 p-4 bg-slate-950/50 border border-white/5 rounded-2xl ml-4">
-                    <span className="text-emerald-500">02</span>
-                    <span className="text-slate-400">focus = ["IoT", "Python", "AI"]</span>
-                  </div>
-                  <div className="flex gap-4 p-4 bg-slate-950/50 border border-white/5 rounded-2xl ml-4">
-                    <span className="text-emerald-500">03</span>
-                    <span className="text-slate-400">vision = "Automating the World"</span>
-                  </div>
-                </div>
-
-                <div className="pt-6 border-t border-white/5 flex gap-8">
-                  <div>
-                    <div className="text-2xl font-black text-white">2026</div>
-                    <div className="text-[10px] text-emerald-500 uppercase font-black tracking-widest">Graduating</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-black text-white">10+</div>
-                    <div className="text-[10px] text-emerald-500 uppercase font-black tracking-widest">Projects</div>
-                  </div>
-                </div>
-              </div>
+            <div className="flex items-center gap-2 px-6 py-4 border-b border-white/5 bg-white/5">
+              <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+              <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+              <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+              <span className="ml-4 text-[10px] font-mono text-slate-500 uppercase tracking-widest">profile_v2.exe</span>
             </div>
-          </motion.div>
 
-          {/* Text Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-10"
-          >
-            <div>
-              <h3 className="text-4xl font-black font-orbitron text-white mb-6">Karthikeyan P</h3>
-              <p className="text-lg text-slate-400 leading-relaxed font-light">
-                Aspiring tech enthusiast with a strong foundation in <span className="text-white font-medium">IoT and Python</span>,
-                eager to apply my skills to real-world applications. I specialize in bridging the gap between
-                physical sensors and digital intelligence.
+            <div className="p-8 md:p-12 space-y-8">
+              <p className="text-xl text-slate-300 leading-relaxed font-light">
+                Greetings. I am <span className="text-white font-bold">Karthikeyan Pandiyaraj</span>, an engineering visionnaire specializing in the fusion of <span className="text-emerald-500">IoT Ecosystems</span> and <span className="text-emerald-500">AI-driven Architectures</span>.
               </p>
-            </div>
 
-            <div className="space-y-8">
-              <div className="flex items-center gap-4 text-emerald-500">
-                <GraduationCap className="w-6 h-6" />
-                <h4 className="font-black font-orbitron text-sm uppercase tracking-[0.2em]">Academic Path</h4>
-              </div>
-
-              <div className="space-y-6">
+              <div className="grid sm:grid-cols-2 gap-8 pt-8 border-t border-white/5">
                 {[
-                  { degree: 'Master of Computer Applications', school: 'Kongu Engineering College', year: '2024 - 2026' },
-                  { degree: 'Bachelor of Computer Applications', school: 'SRMV College', year: '2018 - 2021' }
-                ].map((edu, idx) => (
-                  <div key={idx} className="relative pl-8 border-l border-white/10">
-                    <div className="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-emerald-500" />
-                    <h5 className="text-white font-bold text-sm tracking-tight">{edu.degree}</h5>
-                    <p className="text-xs text-slate-500 uppercase font-medium mt-1">{edu.school} | {edu.year}</p>
+                  { label: 'Role', value: 'IoT Systems Lead' },
+                  { label: 'Focus', value: 'Pythonic Hardware' },
+                  { label: 'Status', value: 'Active Programmer' },
+                  { label: 'Location', value: 'Tamil Nadu, India' },
+                ].map((stat, idx) => (
+                  <div key={idx} className="space-y-1">
+                    <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest">{stat.label}</span>
+                    <p className="text-white font-bold font-orbitron text-sm">{stat.value}</p>
                   </div>
                 ))}
               </div>
-            </div>
 
-            <div className="flex flex-wrap gap-4">
-              {['DIY Electronics', 'Smart Devices', 'Edge AI', 'Web Interfaces'].map(interest => (
-                <span key={interest} className="px-4 py-2 bg-emerald-500/5 border border-emerald-500/20 rounded-xl text-xs text-emerald-400 font-bold uppercase tracking-wider">
-                  {interest}
-                </span>
-              ))}
+              <div className="grid md:grid-cols-2 gap-8 pt-8 border-t border-white/5">
+                <div>
+                  <h4 className="text-xs font-black text-white uppercase tracking-[0.3em] mb-4">Current Protocol</h4>
+                  <ul className="space-y-3">
+                    {['Smart Parking Hubs', 'MQTT Data Streams', 'AI CV Models'].map((item, idx) => (
+                      <li key={idx} className="flex items-center gap-3 text-[11px] text-slate-400 font-medium">
+                        <Circle className="w-1 h-1 text-emerald-500 fill-emerald-500" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xs font-black text-white uppercase tracking-[0.3em] mb-4">Active Nodes</h4>
+                  <ul className="space-y-3">
+                    {[<span className="text-emerald-400">Joint Secretary - Cyber Club</span>, 'IIC Member', 'Technical Coordinator'].map((item, idx) => (
+                      <li key={idx} className="flex items-center gap-3 text-[11px] text-slate-400 font-medium">
+                        <Circle className="w-1 h-1 text-emerald-500 fill-emerald-500" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </motion.div>
+
+          {/* Education Timeline - NEW DESIGN */}
+          <div className="space-y-6 h-full">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="premium-card p-4 md:p-6 bg-emerald-500/5 border-emerald-500/20"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20">
+                  <Milestone className="w-5 h-5 text-emerald-500" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-black text-white uppercase tracking-widest font-orbitron">Academic Trajectory</h3>
+                  <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Chronological Knowledge Nodes</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <div className="relative pl-8 md:pl-12 space-y-8 before:absolute before:left-[19px] md:left-[27px] before:top-4 before:bottom-4 before:w-[2px] before:bg-gradient-to-b before:from-emerald-500/40 before:via-white/5 before:to-transparent">
+              {education.map((edu, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="relative group"
+                >
+                  {/* Timeline Node */}
+                  <div className="absolute -left-[27px] md:-left-[35px] top-1 w-4 h-4 md:w-5 md:h-5 rounded-full bg-slate-900 border-2 border-emerald-500 z-10 group-hover:scale-125 transition-transform">
+                    <div className="absolute inset-1 rounded-full bg-emerald-500 group-hover:bg-white animate-pulse" />
+                  </div>
+
+                  <div className="premium-card p-6 md:p-8 hover:border-emerald-500/30 transition-all">
+                    <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
+                      <div>
+                        <span className="text-[9px] font-black text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20 uppercase tracking-widest mb-2 inline-block">
+                          {edu.level}
+                        </span>
+                        <h4 className="text-lg font-black text-white uppercase tracking-tight group-hover:text-emerald-400 transition-colors">
+                          {edu.degree}
+                        </h4>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-[11px] font-black font-orbitron text-white">{edu.years}</p>
+                        <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest mt-1">{edu.status}</p>
+                      </div>
+                    </div>
+
+                    <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-3 leading-relaxed">
+                      {edu.institute}
+                    </p>
+
+                    <p className="text-xs text-slate-500 font-light leading-relaxed border-t border-white/5 pt-4">
+                      {edu.details}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
         </div>
 
