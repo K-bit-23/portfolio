@@ -1,21 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Terminal, Navigation } from 'lucide-react';
+import { Cpu, Terminal, Layout } from 'lucide-react';
 
 const Skills: React.FC = () => {
     const skillCategories = [
-        {
-            title: 'Automation & UAV',
-            icon: <Navigation className="w-6 h-6 text-emerald-500" />,
-            skills: [
-                'MAVLink Protocol',
-                'ArduPilot / PX4',
-                'Autonomous Flight',
-                'Sensor Fusion (IMU)',
-                'Obstacle Avoidance',
-                'UAV Telemetry'
-            ]
-        },
         {
             title: 'Programming & AI',
             icon: <Terminal className="w-6 h-6 text-emerald-500" />,
@@ -23,7 +11,7 @@ const Skills: React.FC = () => {
                 'Python (Expert)',
                 'Flask / FastAPI',
                 'Deep Learning',
-                'OpenCV (Computer Vision)',
+                'OpenCV (Vision)',
                 'SQL / NoSQL',
                 'Automation Scripts'
             ]
@@ -38,6 +26,18 @@ const Skills: React.FC = () => {
                 'Embedded C/C++',
                 'PCB Design',
                 'Circuit Logic'
+            ]
+        },
+        {
+            title: 'Web & Frameworks',
+            icon: <Layout className="w-6 h-6 text-emerald-500" />,
+            skills: [
+                'React.js',
+                'JavaScript (ES6)',
+                'Tailwind CSS',
+                'Framer Motion',
+                'Responsive Design',
+                'UI/UX Implementation'
             ]
         }
     ];
@@ -74,7 +74,7 @@ const Skills: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="premium-card p-10 group relative"
+                            className="premium-card group relative"
                         >
                             {/* Decorative Background Icon */}
                             <div className="absolute top-10 right-10 text-emerald-500/5 group-hover:text-emerald-500/10 transition-colors pointer-events-none scale-[2.5] flex opacity-20">

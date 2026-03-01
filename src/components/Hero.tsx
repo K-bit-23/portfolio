@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Navigation, Activity, Code2 } from 'lucide-react';
+import { ArrowRight, Cpu, Activity, Code2, Layers } from 'lucide-react';
 
 const Hero: React.FC = () => {
     return (
@@ -20,18 +20,18 @@ const Hero: React.FC = () => {
                         transition={{ delay: 0.2 }}
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-8 shadow-[0_0_20px_rgba(16,185,129,0.1)]"
                     >
-                        <Navigation className="w-4 h-4" />
-                        <span>Autonomous Systems & Sensors Specialist</span>
+                        <Cpu className="w-4 h-4" />
+                        <span>IoT & Python Systems Specialist</span>
                     </motion.div>
 
-                    <h1 className="text-6xl lg:text-8xl font-black font-orbitron leading-[1.1] mb-8 text-white tracking-tighter">
-                        Autonomy. <br />
-                        <span className="text-emerald-500 text-glow-emerald">Sensors.</span> Code.
+                    <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black font-orbitron leading-[1.1] mb-8 text-white tracking-tighter">
+                        Digital. <br />
+                        <span className="text-emerald-500 text-glow-emerald">Connected.</span> Logic.
                     </h1>
 
                     <p className="text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-12 leading-relaxed font-light">
-                        Programming the next generation of <span className="text-white font-medium">unmanned systems</span>.
-                        Merging advanced sensor fusion with robust Python architectures for drones and autonomous hardware.
+                        Architecting intelligent hardware ecosystems with <span className="text-white font-medium">Python</span>.
+                        Turning raw sensor data into actionable digital intelligence through modern IoT architectures.
                     </p>
 
                     <div className="flex flex-wrap justify-center lg:justify-start gap-6">
@@ -39,9 +39,9 @@ const Hero: React.FC = () => {
                             href="#projects"
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="px-10 py-5 bg-emerald-500 text-slate-950 font-black rounded-2xl flex items-center gap-3 button-glow transition-all"
+                            className="w-full sm:w-auto px-10 py-5 bg-emerald-500 text-slate-950 font-black rounded-2xl flex items-center justify-center gap-3 button-glow transition-all"
                         >
-                            Explore Fleet
+                            View Projects
                             <ArrowRight className="w-5 h-5" />
                         </motion.a>
 
@@ -49,9 +49,9 @@ const Hero: React.FC = () => {
                             href="#skills"
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="px-10 py-5 bg-slate-900/50 border border-white/10 text-white font-bold rounded-2xl flex items-center gap-3 backdrop-blur-xl hover:bg-white/5 hover:border-white/20 transition-all font-orbitron text-xs uppercase tracking-widest"
+                            className="w-full sm:w-auto px-10 py-5 bg-slate-900/50 border border-white/10 text-white font-bold rounded-2xl flex items-center justify-center gap-3 backdrop-blur-xl hover:bg-white/5 hover:border-white/20 transition-all font-orbitron text-xs uppercase tracking-widest"
                         >
-                            View Tech Deck
+                            Technical Deck
                         </motion.a>
                     </div>
                 </motion.div>
@@ -79,7 +79,7 @@ const Hero: React.FC = () => {
                             className="absolute w-[350px] h-[350px] border border-white/5 rounded-full"
                         />
 
-                        {/* Drone Telemetry Block */}
+                        {/* System Status Block */}
                         <motion.div
                             animate={{ y: [0, -20, 0] }}
                             transition={{ duration: 5, repeat: Infinity }}
@@ -87,12 +87,12 @@ const Hero: React.FC = () => {
                         >
                             <div className="flex items-center gap-3 mb-3">
                                 <div className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                                <span className="text-[10px] font-mono text-emerald-500 font-bold uppercase">UAV Link 5.8GHz</span>
+                                <span className="text-[10px] font-mono text-emerald-500 font-bold uppercase">Node Active</span>
                             </div>
                             <div className="text-[12px] font-mono text-slate-400 space-y-1">
-                                <div className="flex justify-between gap-4"><span>ALT:</span> <span className="text-emerald-400">120m</span></div>
-                                <div className="flex justify-between gap-4"><span>HDG:</span> <span className="text-emerald-400">284°</span></div>
-                                <div className="flex justify-between gap-4"><span>GPS:</span> <span className="text-emerald-400">LOCK</span></div>
+                                <div className="flex justify-between gap-4"><span>CPU:</span> <span className="text-emerald-400">0.8%</span></div>
+                                <div className="flex justify-between gap-4"><span>MEM:</span> <span className="text-emerald-400">24MB</span></div>
+                                <div className="flex justify-between gap-4"><span>NET:</span> <span className="text-emerald-400">UP</span></div>
                             </div>
                         </motion.div>
 
@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
                         >
                             <div className="flex items-center gap-3 mb-4">
                                 <Activity className="w-4 h-4 text-emerald-500" />
-                                <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">IMU Stream</span>
+                                <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Logic Stream</span>
                             </div>
                             <div className="w-32 h-1 bg-white/5 rounded-full overflow-hidden">
                                 <motion.div
@@ -126,10 +126,10 @@ const Hero: React.FC = () => {
                             <div className="h-1 w-12 bg-emerald-500/20 rounded-full" />
                         </motion.div>
 
-                        {/* Central Hub - UAV Core */}
+                        {/* Central Hub */}
                         <div className="relative z-10 w-40 h-40 bg-slate-900 border border-white/10 rounded-[40px] flex items-center justify-center rotate-12 shadow-2xl">
                             <div className="w-24 h-24 bg-emerald-500/10 rounded-[24px] flex items-center justify-center border border-emerald-500/20 -rotate-12 animate-pulse">
-                                <Navigation className="w-12 h-12 text-emerald-400" />
+                                <Layers className="w-12 h-12 text-emerald-400" />
                             </div>
                         </div>
                     </div>

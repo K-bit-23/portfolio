@@ -27,28 +27,30 @@ const Contact: React.FC = () => {
           </motion.h2>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12">
+        <div className="grid lg:grid-cols-5 gap-8 md:gap-12">
 
           {/* Contact Details */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-6 md:space-y-8">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="premium-card p-10 space-y-12"
+              className="premium-card space-y-10 md:space-y-12"
             >
               {[
                 { icon: <Mail className="text-emerald-500 w-6 h-6" />, title: 'Email Me', value: 'karthikeyankarthikeyan64182@gmail.com', href: 'mailto:karthikeyankarthikeyan64182@gmail.com' },
                 { icon: <Phone className="text-emerald-500 w-6 h-6" />, title: 'Call / WhatsApp', value: '9566723397', href: 'https://wa.me/919566723397' },
                 { icon: <MapPin className="text-emerald-500 w-6 h-6" />, title: 'Location', value: 'Tamil Nadu, India', href: '#' },
               ].map((item, idx) => (
-                <div key={idx} className="flex gap-6 items-start group">
-                  <div className="p-4 bg-emerald-500/5 rounded-2xl border border-emerald-500/10 group-hover:border-emerald-500/40 transition-all shadow-xl">
+                <div key={idx} className="flex gap-4 md:gap-6 items-start group">
+                  <div className="p-3 md:p-4 bg-emerald-500/5 rounded-2xl border border-emerald-500/10 group-hover:border-emerald-500/40 transition-all shadow-xl flex-shrink-0">
                     {item.icon}
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-1">{item.title}</h4>
-                    <a href={item.href} className="text-white font-bold hover:text-emerald-400 transition-colors tracking-tight">{item.value}</a>
+                    <a href={item.href} className="text-white font-bold hover:text-emerald-400 transition-colors tracking-tight block truncate md:whitespace-normal">
+                      {item.value}
+                    </a>
                   </div>
                 </div>
               ))}
@@ -66,21 +68,21 @@ const Contact: React.FC = () => {
           {/* Contact Form */}
           <div className="lg:col-span-3">
             <motion.form
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="premium-card p-10 space-y-8"
+              className="premium-card space-y-6 md:space-y-8"
               onSubmit={(e) => {
                 e.preventDefault();
               }}
             >
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-3">
                   <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] px-1">Full Name</label>
                   <input
                     type="text"
                     placeholder="John Doe"
-                    className="w-full bg-slate-950/50 border border-white/5 rounded-2xl px-6 py-4 text-white placeholder-slate-700 focus:outline-none focus:border-emerald-500/40 focus:bg-slate-950 transition-all"
+                    className="w-full bg-slate-950/50 border border-white/5 rounded-2xl px-6 py-4 text-white placeholder-slate-700 focus:outline-none focus:border-emerald-500/40 focus:bg-slate-950 transition-all text-sm md:text-base"
                   />
                 </div>
                 <div className="space-y-3">
@@ -88,7 +90,7 @@ const Contact: React.FC = () => {
                   <input
                     type="email"
                     placeholder="john@example.com"
-                    className="w-full bg-slate-950/50 border border-white/5 rounded-2xl px-6 py-4 text-white placeholder-slate-700 focus:outline-none focus:border-emerald-500/40 focus:bg-slate-950 transition-all"
+                    className="w-full bg-slate-950/50 border border-white/5 rounded-2xl px-6 py-4 text-white placeholder-slate-700 focus:outline-none focus:border-emerald-500/40 focus:bg-slate-950 transition-all text-sm md:text-base"
                   />
                 </div>
               </div>
@@ -98,17 +100,16 @@ const Contact: React.FC = () => {
                 <textarea
                   rows={5}
                   placeholder="Describe your vision..."
-                  className="w-full bg-slate-950/50 border border-white/5 rounded-2xl px-6 py-4 text-white placeholder-slate-700 focus:outline-none focus:border-emerald-500/40 focus:bg-slate-950 transition-all resize-none"
+                  className="w-full bg-slate-950/50 border border-white/5 rounded-2xl px-6 py-4 text-white placeholder-slate-700 focus:outline-none focus:border-emerald-500/40 focus:bg-slate-950 transition-all resize-none text-sm md:text-base"
                 />
               </div>
 
-              <button className="w-full bg-emerald-500 text-slate-950 font-black py-5 rounded-2xl button-glow hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-3 uppercase tracking-widest text-xs">
+              <button className="w-full bg-emerald-500 text-slate-950 font-black py-4 md:py-5 rounded-2xl button-glow hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-3 uppercase tracking-widest text-xs">
                 Establish Protocol
                 <Send className="w-5 h-5" />
               </button>
             </motion.form>
           </div>
-
         </div>
 
       </div>

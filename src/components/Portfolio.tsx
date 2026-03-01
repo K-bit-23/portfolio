@@ -1,17 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Layers, Monitor, Cpu, Navigation } from 'lucide-react';
+import { ExternalLink, Github, Layers, Monitor, Cpu } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const projects = [
-    {
-      title: 'Autonomous UAV Navigation Hub',
-      description: 'Custom autonomous flight control system with real-time obstacle avoidance and sensor fusion (Imu, Gps, Lidar).',
-      tags: ['Drones', 'MAVLink', 'Python', 'Sensors'],
-      image: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=1000',
-      links: { github: '#', demo: '#' },
-      icon: <Navigation className="w-5 h-5 text-emerald-500" />
-    },
     {
       title: 'Water Level Monitoring System',
       description: 'IoT-based real-time water level tracking system using ESP8266 and MQTT protocol with Flask dashboard.',
@@ -58,7 +50,7 @@ const Projects: React.FC = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-bold font-orbitron text-white"
           >
-            Engineering <span className="text-gradient">Masterpieces</span>
+            Engineering <span className="text-emerald-500">Masterpieces</span>
           </motion.h2>
         </div>
 
@@ -72,7 +64,6 @@ const Projects: React.FC = () => {
               transition={{ delay: idx * 0.1, duration: 0.6 }}
               className="group premium-card overflow-hidden relative"
             >
-              {/* Image Header */}
               <div className="relative h-64 overflow-hidden">
                 <img
                   src={project.image}
@@ -80,14 +71,11 @@ const Projects: React.FC = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 to-transparent" />
-
-                {/* Floating Icon */}
                 <div className="absolute top-6 right-6 p-3 bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-white/10 group-hover:border-emerald-500/50 shadow-2xl transition-colors">
                   {project.icon}
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-8 space-y-6">
                 <div className="flex gap-2 flex-wrap">
                   {project.tags.map(tag => (
