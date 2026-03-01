@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Cpu, Github, Linkedin } from 'lucide-react';
+import { Menu, X, Cpu, Github, Linkedin, Download } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const resumeLink = "https://drive.google.com/file/d/1e9-XOho70TdAUvm5NcCursTlkmhhv4Ui/view?usp=drive_link";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,16 +40,25 @@ const Navbar: React.FC = () => {
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="px-5 py-2 text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-emerald-400 transition-all rounded-xl hover:bg-white/5"
+                className="px-4 py-2 text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-emerald-400 transition-all rounded-xl hover:bg-white/5"
               >
                 {link.name}
               </a>
             ))}
+            <a
+              href={resumeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-black uppercase tracking-widest rounded-xl hover:bg-emerald-500/20 transition-all flex items-center gap-2"
+            >
+              Resume
+              <Download className="w-3 h-3" />
+            </a>
           </div>
 
           {/* Social Icons & Mobile Menu Button */}
@@ -93,6 +103,16 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </a>
               ))}
+              <a
+                href={resumeLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-bold uppercase tracking-widest text-emerald-500 py-3 px-4 rounded-2xl bg-emerald-500/5 hover:bg-emerald-500/10 transition-all flex items-center justify-between"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Resume
+                <Download className="w-4 h-4" />
+              </a>
             </div>
           </motion.div>
         )}

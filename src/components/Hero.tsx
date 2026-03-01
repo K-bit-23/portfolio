@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Cpu, Activity, Code2, Layers } from 'lucide-react';
+import { ArrowRight, Cpu, Activity, Code2, Layers, Download } from 'lucide-react';
 
 const Hero: React.FC = () => {
+    const resumeLink = "https://drive.google.com/file/d/1e9-XOho70TdAUvm5NcCursTlkmhhv4Ui/view?usp=drive_link";
+
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 px-4 overflow-hidden text-white">
             <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
@@ -34,24 +36,27 @@ const Hero: React.FC = () => {
                         Turning raw sensor data into actionable digital intelligence through modern IoT architectures.
                     </p>
 
-                    <div className="flex flex-wrap justify-center lg:justify-start gap-6">
+                    <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                         <motion.a
                             href="#projects"
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="w-full sm:w-auto px-10 py-5 bg-emerald-500 text-slate-950 font-black rounded-2xl flex items-center justify-center gap-3 button-glow transition-all"
+                            className="w-full sm:w-auto px-8 py-5 bg-emerald-500 text-slate-950 font-black rounded-2xl flex items-center justify-center gap-3 button-glow transition-all"
                         >
                             View Projects
                             <ArrowRight className="w-5 h-5" />
                         </motion.a>
 
                         <motion.a
-                            href="#skills"
+                            href={resumeLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="w-full sm:w-auto px-10 py-5 bg-slate-900/50 border border-white/10 text-white font-bold rounded-2xl flex items-center justify-center gap-3 backdrop-blur-xl hover:bg-white/5 hover:border-white/20 transition-all font-orbitron text-xs uppercase tracking-widest"
+                            className="w-full sm:w-auto px-8 py-5 bg-white/5 border border-white/10 text-white font-bold rounded-2xl flex items-center justify-center gap-3 backdrop-blur-xl hover:bg-white/10 hover:border-emerald-500/30 transition-all font-orbitron text-xs uppercase tracking-widest"
                         >
-                            Technical Deck
+                            Get Resume
+                            <Download className="w-4 h-4 text-emerald-500" />
                         </motion.a>
                     </div>
                 </motion.div>
