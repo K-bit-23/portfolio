@@ -42,7 +42,7 @@ const InteractiveBackground: React.FC = () => {
 
         const drawParticle = (p: Particle) => {
             if (!ctx) return;
-            ctx.fillStyle = 'rgba(0, 224, 255, 0.4)';
+            ctx.fillStyle = 'rgba(16, 185, 129, 0.4)';
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
             ctx.fill();
@@ -66,9 +66,9 @@ const InteractiveBackground: React.FC = () => {
                     const dy = particles[a].y - particles[b].y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
 
-                    if (distance < 150) {
-                        ctx.strokeStyle = `rgba(0, 224, 255, ${0.1 * (1 - distance / 150)})`;
-                        ctx.lineWidth = 1;
+                    if (distance < 120) {
+                        ctx.strokeStyle = `rgba(16, 185, 129, ${0.08 * (1 - distance / 120)})`;
+                        ctx.lineWidth = 0.5;
                         ctx.beginPath();
                         ctx.moveTo(particles[a].x, particles[a].y);
                         ctx.lineTo(particles[b].x, particles[b].y);
@@ -99,7 +99,7 @@ const InteractiveBackground: React.FC = () => {
     return (
         <canvas
             ref={canvasRef}
-            className="fixed top-0 left-0 w-full h-full -z-10 bg-[#05070a]"
+            className="fixed top-0 left-0 w-full h-full -z-10 bg-[#020617]"
         />
     );
 };

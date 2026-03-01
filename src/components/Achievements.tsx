@@ -71,23 +71,25 @@ const Achievements: React.FC = () => {
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="space-y-8"
+                        className="space-y-10"
                     >
-                        <div className="flex items-center gap-4 mb-6">
-                            <Trophy className="text-neon-cyan w-8 h-8" />
-                            <h3 className="text-2xl font-bold font-orbitron text-white">Awards</h3>
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="p-3 bg-emerald-500/10 rounded-2xl border border-emerald-500/20">
+                                <Trophy className="text-emerald-500 w-6 h-6" />
+                            </div>
+                            <h3 className="text-2xl font-black font-orbitron text-white uppercase tracking-tight">Top Awards</h3>
                         </div>
 
-                        <div className="space-y-4">
+                        <div className="space-y-6">
                             {awards.map((award, idx) => (
-                                <div key={idx} className="glass-card p-6 border border-white/5 hover:border-neon-cyan/20 transition-all group relative overflow-hidden">
-                                    <div className="absolute top-0 left-0 w-1 h-full bg-neon-cyan opacity-40" />
+                                <div key={idx} className="premium-card p-8 group relative overflow-hidden">
+                                    <div className="absolute top-0 left-0 w-1 h-full bg-emerald-500 opacity-60 group-hover:w-2 transition-all" />
                                     <div className="flex justify-between items-start gap-4">
                                         <div>
-                                            <h4 className="text-lg font-bold text-white group-hover:text-neon-cyan transition-colors">{award.title}</h4>
-                                            <p className="text-sm text-slate-500">{award.organization}</p>
+                                            <h4 className="text-lg font-black text-white group-hover:text-emerald-400 transition-colors uppercase tracking-tight leading-tight">{award.title}</h4>
+                                            <p className="text-sm text-slate-500 font-bold uppercase mt-2 tracking-widest">{award.organization}</p>
                                         </div>
-                                        <span className="text-xs font-mono text-neon-cyan/60">{award.year}</span>
+                                        <span className="text-[10px] font-black font-mono text-emerald-500 bg-emerald-500/5 px-2 py-1 rounded-md border border-emerald-500/20">{award.year}</span>
                                     </div>
                                 </div>
                             ))}
@@ -99,24 +101,26 @@ const Achievements: React.FC = () => {
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="space-y-8"
+                        className="space-y-10"
                     >
-                        <div className="flex items-center gap-4 mb-6">
-                            <BookOpen className="text-neon-purple w-8 h-8" />
-                            <h3 className="text-2xl font-bold font-orbitron text-white">Certifications</h3>
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="p-3 bg-emerald-500/10 rounded-2xl border border-emerald-500/20">
+                                <BookOpen className="text-emerald-500 w-6 h-6" />
+                            </div>
+                            <h3 className="text-2xl font-black font-orbitron text-white uppercase tracking-tight">Certifications</h3>
                         </div>
 
-                        <div className="space-y-4">
+                        <div className="space-y-6">
                             {courses.map((course, idx) => (
-                                <div key={idx} className="glass-card p-6 border border-white/5 hover:border-neon-purple/20 transition-all group flex items-center gap-6">
-                                    <div className="p-3 bg-neon-purple/10 rounded-xl border border-neon-purple/20 group-hover:border-neon-purple/40 transition-colors">
-                                        <Award className="text-neon-purple w-6 h-6" />
+                                <div key={idx} className="premium-card p-8 group flex items-center gap-8">
+                                    <div className="w-14 h-14 bg-emerald-500/5 rounded-2xl border border-emerald-500/10 group-hover:bg-emerald-500/10 group-hover:border-emerald-500/30 transition-all flex items-center justify-center">
+                                        <Award className="text-emerald-500/60 group-hover:text-emerald-500 w-8 h-8 transition-colors" />
                                     </div>
                                     <div>
-                                        <h4 className="text-lg font-bold text-white group-hover:text-neon-purple transition-colors">{course.title}</h4>
-                                        <p className="text-sm text-slate-500">{course.provider}</p>
+                                        <h4 className="text-lg font-black text-white group-hover:text-emerald-400 transition-colors uppercase tracking-tight leading-tight">{course.title}</h4>
+                                        <p className="text-sm text-slate-500 font-bold uppercase mt-1 tracking-widest">{course.provider}</p>
                                     </div>
-                                    <CheckCircle2 className="ml-auto text-neon-green/40 w-5 h-5" />
+                                    <CheckCircle2 className="ml-auto text-emerald-500/20 group-hover:text-emerald-500 w-6 h-6 transition-all" />
                                 </div>
                             ))}
                         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
@@ -35,30 +35,29 @@ const Contact: React.FC = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-card p-10 border border-white/5 space-y-12"
+              className="premium-card p-10 space-y-12"
             >
               {[
-                { icon: <Mail className="text-neon-cyan w-6 h-6" />, title: 'Email Me', value: 'karthikeyan.p.developer@gmail.com', href: 'mailto:karthikeyan.p.developer@gmail.com' },
-                { icon: <Phone className="text-neon-green w-6 h-6" />, title: 'Call / WhatsApp', value: '+91 93610 33181', href: 'https://wa.me/919361033181' },
-                { icon: <MapPin className="text-neon-purple w-6 h-6" />, title: 'Location', value: 'Tamil Nadu, India', href: '#' },
+                { icon: <Mail className="text-emerald-500 w-6 h-6" />, title: 'Email Me', value: 'karthikeyan.p.developer@gmail.com', href: 'mailto:karthikeyan.p.developer@gmail.com' },
+                { icon: <Phone className="text-emerald-500 w-6 h-6" />, title: 'Call / WhatsApp', value: '+91 93610 33181', href: 'https://wa.me/919361033181' },
+                { icon: <MapPin className="text-emerald-500 w-6 h-6" />, title: 'Location', value: 'Tamil Nadu, India', href: '#' },
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-6 items-start group">
-                  <div className="p-4 bg-white/5 rounded-2xl border border-white/10 group-hover:border-neon-cyan/40 transition-colors shadow-xl">
+                  <div className="p-4 bg-emerald-500/5 rounded-2xl border border-emerald-500/10 group-hover:border-emerald-500/40 transition-all shadow-xl">
                     {item.icon}
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-1">{item.title}</h4>
-                    <a href={item.href} className="text-white font-medium hover:text-neon-cyan transition-colors">{item.value}</a>
+                    <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-1">{item.title}</h4>
+                    <a href={item.href} className="text-white font-bold hover:text-emerald-400 transition-colors tracking-tight">{item.value}</a>
                   </div>
                 </div>
               ))}
 
               <div className="pt-8 border-t border-white/5">
-                <h4 className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-6">Social Ecosystem</h4>
-                <div className="flex gap-6">
-                  <a href="https://github.com/K-bit-23" className="w-12 h-12 glass-card flex items-center justify-center hover:bg-neon-cyan/20 transition-all text-white"><Github /></a>
-                  <a href="https://linkedin.com/in/karthikeyan-pandiyaraj-351015229" className="w-12 h-12 glass-card flex items-center justify-center hover:bg-neon-cyan/20 transition-all text-white"><Linkedin /></a>
-                  <a href="https://youtube.com/@karthideepakkd" className="w-12 h-12 glass-card flex items-center justify-center hover:bg-neon-cyan/20 transition-all text-white"><Youtube /></a>
+                <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-6">Digital Nodes</h4>
+                <div className="flex gap-4">
+                  <a href="https://github.com/K-bit-23" className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-emerald-500/10 hover:border-emerald-500/20 border border-transparent transition-all text-white"><Github /></a>
+                  <a href="https://linkedin.com/in/karthikeyan-pandiyaraj-351015229" className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-emerald-500/10 hover:border-emerald-500/20 border border-transparent transition-all text-white"><Linkedin /></a>
                 </div>
               </div>
             </motion.div>
@@ -70,51 +69,41 @@ const Contact: React.FC = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-card p-10 border border-white/5 space-y-8"
+              className="premium-card p-10 space-y-8"
               onSubmit={(e) => {
                 e.preventDefault();
-                // Add message logic here
               }}
             >
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-3">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Identity</label>
+                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] px-1">Full Name</label>
                   <input
                     type="text"
                     placeholder="John Doe"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-neon-cyan/40 transition-all shadow-inner"
+                    className="w-full bg-slate-950/50 border border-white/5 rounded-2xl px-6 py-4 text-white placeholder-slate-700 focus:outline-none focus:border-emerald-500/40 focus:bg-slate-950 transition-all"
                   />
                 </div>
                 <div className="space-y-3">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Channel (Email)</label>
+                  <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] px-1">Email Address</label>
                   <input
                     type="email"
-                    placeholder="john@nexus.com"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-neon-cyan/40 transition-all shadow-inner"
+                    placeholder="john@example.com"
+                    className="w-full bg-slate-950/50 border border-white/5 rounded-2xl px-6 py-4 text-white placeholder-slate-700 focus:outline-none focus:border-emerald-500/40 focus:bg-slate-950 transition-all"
                   />
                 </div>
               </div>
 
               <div className="space-y-3">
-                <label className="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Subject of interest</label>
-                <input
-                  type="text"
-                  placeholder="Inquiry about IoT project..."
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-neon-cyan/40 transition-all shadow-inner"
-                />
-              </div>
-
-              <div className="space-y-3">
-                <label className="text-xs font-bold text-slate-500 uppercase tracking-widest px-1">Transmission Data (Message)</label>
+                <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] px-1">Project Concept</label>
                 <textarea
                   rows={5}
-                  placeholder="Hey, let's connect for an IoT solution..."
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-neon-cyan/40 transition-all shadow-inner resize-none"
+                  placeholder="Describe your vision..."
+                  className="w-full bg-slate-950/50 border border-white/5 rounded-2xl px-6 py-4 text-white placeholder-slate-700 focus:outline-none focus:border-emerald-500/40 focus:bg-slate-950 transition-all resize-none"
                 />
               </div>
 
-              <button className="w-full bg-gradient-to-r from-neon-cyan to-neon-purple text-dark font-bold py-5 rounded-2xl shadow-[0_0_30px_rgba(0,224,255,0.2)] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3">
-                Establish Connection
+              <button className="w-full bg-emerald-500 text-slate-950 font-black py-5 rounded-2xl button-glow hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-3 uppercase tracking-widest text-xs">
+                Establish Protocol
                 <Send className="w-5 h-5" />
               </button>
             </motion.form>

@@ -63,7 +63,7 @@ const Projects: React.FC = () => {
           </motion.h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project, idx) => (
             <motion.div
               key={project.title}
@@ -71,55 +71,52 @@ const Projects: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
-              className="group glass-card overflow-hidden hover:border-neon-cyan/20 transition-all duration-500 relative shadow-2xl"
+              className="group premium-card overflow-hidden relative"
             >
               {/* Image Header */}
-              <div className="relative h-64 overflow-hidden mask-fade">
+              <div className="relative h-64 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark/90 to-transparent opacity-60 transition-opacity group-hover:opacity-40" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 to-transparent" />
 
                 {/* Floating Icon */}
-                <div className="absolute top-4 right-4 p-3 bg-dark/80 backdrop-blur-md rounded-xl border border-white/10 group-hover:border-neon-cyan/30 shadow-2xl">
+                <div className="absolute top-6 right-6 p-3 bg-slate-900/80 backdrop-blur-xl rounded-2xl border border-white/10 group-hover:border-emerald-500/50 shadow-2xl transition-colors">
                   {project.icon}
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-8 space-y-4">
+              <div className="p-8 space-y-6">
                 <div className="flex gap-2 flex-wrap">
                   {project.tags.map(tag => (
-                    <span key={tag} className="text-[10px] font-bold uppercase tracking-widest text-neon-cyan/60 px-2 py-0.5 border border-neon-cyan/10 rounded-full bg-neon-cyan/5">
+                    <span key={tag} className="text-[10px] font-black uppercase tracking-widest text-emerald-500 bg-emerald-500/5 px-2.5 py-1 rounded-lg border border-emerald-500/10">
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <h3 className="text-2xl font-bold font-orbitron text-white group-hover:text-neon-cyan transition-colors line-clamp-2">
+                <h3 className="text-2xl font-black font-orbitron text-white group-hover:text-emerald-400 transition-colors uppercase tracking-tight leading-tight">
                   {project.title}
                 </h3>
 
-                <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
+                <p className="text-sm text-slate-400 leading-relaxed line-clamp-3 font-light">
                   {project.description}
                 </p>
 
                 <div className="flex items-center gap-6 pt-6 mt-6 border-t border-white/5">
-                  <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors">
-                    <Github className="w-5 h-5 text-neon-cyan" />
+                  <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-slate-500 hover:text-white transition-colors">
+                    <Github className="w-5 h-5 text-emerald-500/60 group-hover:text-emerald-500" />
                     Source
                   </a>
-                  <a href={project.links.demo} className="flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors">
-                    <ExternalLink className="w-5 h-5 text-neon-green" />
+                  <a href={project.links.demo} className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-slate-500 hover:text-white transition-colors">
+                    <ExternalLink className="w-5 h-5 text-emerald-500/60 group-hover:text-emerald-500" />
                     Preview
                   </a>
                 </div>
               </div>
-
-              {/* Hover Glow */}
-              <div className="absolute inset-0 pointer-events-none border-2 border-transparent group-hover:border-neon-cyan/10 transition-colors z-20" />
             </motion.div>
           ))}
         </div>

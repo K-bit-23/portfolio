@@ -22,10 +22,10 @@ const Home: React.FC = () => {
       <Contact />
 
       {/* Footer */}
-      <footer className="py-12 border-t border-white/5 relative z-10 bg-dark-lighter">
+      <footer className="py-12 border-t border-white/5 bg-slate-950/20">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-slate-500 text-sm">
-            &copy; {new Date().getFullYear()} Karthikeyan P. Built with modern IoT excellence. All rights reserved.
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-slate-600">
+            © {new Date().getFullYear()} <span className="text-emerald-500/60">Karthikeyan Pandiyaraj.</span> Built with Pythonic Precision.
           </p>
         </div>
       </footer>

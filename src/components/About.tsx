@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Globe, Shield } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
@@ -27,107 +27,90 @@ const About: React.FC = () => {
           </motion.h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Visual Element */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="glass-card p-10 relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-neon-cyan/5 rounded-full blur-3xl group-hover:bg-neon-cyan/10 transition-colors" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-neon-purple/5 rounded-full blur-3xl group-hover:bg-neon-purple/10 transition-colors" />
+            <div className="premium-card p-8 lg:p-12 relative overflow-hidden group">
+              <div className="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/5 rounded-full blur-[100px]" />
 
-              <div className="space-y-8 relative z-10 font-mono text-sm">
-                <div className="p-4 bg-dark/50 border border-white/5 rounded-xl shadow-inner">
-                  <span className="text-neon-cyan">$ whoami</span><br />
-                  <span className="text-slate-400"># Result: Freelance IoT Developer & Innovator</span>
+              <div className="space-y-6 relative z-10">
+                <div className="font-mono text-sm space-y-4">
+                  <div className="flex gap-4 p-4 bg-slate-950/50 border border-white/5 rounded-2xl">
+                    <span className="text-emerald-500">01</span>
+                    <span className="text-slate-400">class <span className="text-white">Innovator</span>:</span>
+                  </div>
+                  <div className="flex gap-4 p-4 bg-slate-950/50 border border-white/5 rounded-2xl ml-4">
+                    <span className="text-emerald-500">02</span>
+                    <span className="text-slate-400">focus = ["IoT", "Python", "AI"]</span>
+                  </div>
+                  <div className="flex gap-4 p-4 bg-slate-950/50 border border-white/5 rounded-2xl ml-4">
+                    <span className="text-emerald-500">03</span>
+                    <span className="text-slate-400">vision = "Automating the World"</span>
+                  </div>
                 </div>
-                <div className="p-4 bg-dark/50 border border-white/5 rounded-xl shadow-inner">
-                  <span className="text-neon-green">$ location</span><br />
-                  <span className="text-slate-400"># Result: Tamil Nadu, India</span>
-                </div>
-                <div className="p-4 bg-dark/50 border border-white/5 rounded-xl shadow-inner">
-                  <span className="text-neon-purple">$ passion</span><br />
-                  <span className="text-slate-400"># Result: Connecting physical sensors to global networks</span>
+
+                <div className="pt-6 border-t border-white/5 flex gap-8">
+                  <div>
+                    <div className="text-2xl font-black text-white">2026</div>
+                    <div className="text-[10px] text-emerald-500 uppercase font-black tracking-widest">Graduating</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-black text-white">10+</div>
+                    <div className="text-[10px] text-emerald-500 uppercase font-black tracking-widest">Projects</div>
+                  </div>
                 </div>
               </div>
             </div>
-            {/* Background floating icon */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-              className="absolute -top-10 -left-10 w-40 h-40 border border-white/5 rounded-full opacity-20 pointer-events-none"
-            />
           </motion.div>
 
           {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-10"
           >
-            <h3 className="text-3xl font-bold font-orbitron text-white/90">Karthikeyan P</h3>
-            <p className="text-lg text-slate-400 leading-relaxed max-w-xl">
-              Aspiring tech enthusiast with a strong foundation in IoT and Python, eager to apply my skills to real-world applications.
-              Seeking a challenging role where I can contribute to innovative solutions while continuously growing in a dynamic environment.
-            </p>
-            <p className="text-lg text-slate-400 leading-relaxed max-w-xl">
-              I specialize in connecting physical sensors to digital networks, creating seamless ecosystems that bridge the gap
-              between hardware and software excellence.
-            </p>
+            <div>
+              <h3 className="text-4xl font-black font-orbitron text-white mb-6">Karthikeyan P</h3>
+              <p className="text-lg text-slate-400 leading-relaxed font-light">
+                Aspiring tech enthusiast with a strong foundation in <span className="text-white font-medium">IoT and Python</span>,
+                eager to apply my skills to real-world applications. I specialize in bridging the gap between
+                physical sensors and digital intelligence.
+              </p>
+            </div>
 
-            <div className="space-y-6 pt-8">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-neon-cyan">
-                  <GraduationCap className="w-6 h-6" />
-                  <h4 className="font-bold font-orbitron text-sm uppercase tracking-widest">Education</h4>
-                </div>
-                <div className="grid gap-4">
-                  <div className="pl-9 relative border-l border-white/10 ml-3">
-                    <div className="absolute top-2 -left-[5px] w-2 h-2 rounded-full bg-neon-cyan shadow-[0_0_10px_rgba(0,224,255,1)]" />
-                    <p className="text-sm font-bold text-white">Master of Computer Applications (MCA)</p>
-                    <p className="text-xs text-slate-500">Kongu Engineering College | 2024</p>
-                  </div>
-                  <div className="pl-9 relative border-l border-white/10 ml-3">
-                    <div className="absolute top-2 -left-[5px] w-2 h-2 rounded-full bg-neon-cyan/40" />
-                    <p className="text-sm font-bold text-white">Bachelor of Computer Applications (BCA)</p>
-                    <p className="text-xs text-slate-500">Sri Ramakrishna Mission Vidyalaya College of Arts & Science | 2021</p>
-                  </div>
-                  <div className="pl-9 relative border-l border-white/10 ml-3">
-                    <div className="absolute top-2 -left-[5px] w-2 h-2 rounded-full bg-neon-cyan/20" />
-                    <p className="text-sm font-bold text-white">Higher Secondary Education</p>
-                    <p className="text-xs text-slate-500">GVC Higher Secondary School | 2018</p>
-                  </div>
-                </div>
+            <div className="space-y-8">
+              <div className="flex items-center gap-4 text-emerald-500">
+                <GraduationCap className="w-6 h-6" />
+                <h4 className="font-black font-orbitron text-sm uppercase tracking-[0.2em]">Academic Path</h4>
               </div>
 
-              <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-                  <div className="flex items-center gap-3 text-neon-green mb-2">
-                    <Shield className="w-5 h-5" />
-                    <h4 className="font-bold font-orbitron text-xs uppercase">Interests</h4>
+              <div className="space-y-6">
+                {[
+                  { degree: 'Master of Computer Applications', school: 'Kongu Engineering College', year: '2024 - 2026' },
+                  { degree: 'Bachelor of Computer Applications', school: 'SRMV College', year: '2018 - 2021' }
+                ].map((edu, idx) => (
+                  <div key={idx} className="relative pl-8 border-l border-white/10">
+                    <div className="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-emerald-500" />
+                    <h5 className="text-white font-bold text-sm tracking-tight">{edu.degree}</h5>
+                    <p className="text-xs text-slate-500 uppercase font-medium mt-1">{edu.school} | {edu.year}</p>
                   </div>
-                  <ul className="text-xs text-slate-400 space-y-1">
-                    <li>• DIY Electronic Projects</li>
-                    <li>• Web Interfaces</li>
-                    <li>• Edge AI & Smart Devices</li>
-                  </ul>
-                </div>
-                <div className="p-4 bg-white/5 rounded-xl border border-white/10">
-                  <div className="flex items-center gap-3 text-neon-purple mb-2">
-                    <Globe className="w-5 h-5" />
-                    <h4 className="font-bold font-orbitron text-xs uppercase">Organizations</h4>
-                  </div>
-                  <ul className="text-xs text-slate-400 space-y-1">
-                    <li>• Environmental & Energy Club</li>
-                    <li>• Institution's Innovation Council</li>
-                  </ul>
-                </div>
+                ))}
               </div>
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+              {['DIY Electronics', 'Smart Devices', 'Edge AI', 'Web Interfaces'].map(interest => (
+                <span key={interest} className="px-4 py-2 bg-emerald-500/5 border border-emerald-500/20 rounded-xl text-xs text-emerald-400 font-bold uppercase tracking-wider">
+                  {interest}
+                </span>
+              ))}
             </div>
           </motion.div>
 
