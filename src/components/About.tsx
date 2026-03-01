@@ -72,15 +72,15 @@ const About: React.FC = () => {
 
             <div className="p-8 md:p-12 space-y-8">
               <p className="text-xl text-slate-300 leading-relaxed font-light">
-                Greetings. I am <span className="text-white font-bold">Karthikeyan Pandiyaraj</span>, an engineering visionnaire specializing in the fusion of <span className="text-emerald-500">IoT Ecosystems</span> and <span className="text-emerald-500">AI-driven Architectures</span>.
+                I am an <span className="text-white font-bold">Aspiring tech enthusiast</span> with a strong foundation in <span className="text-emerald-500">IoT and Python</span>, eager to apply my skills to real-world applications. I seek challenging roles where I can contribute to <span className="text-emerald-500">innovative solutions</span> while continuously growing in dynamic environments.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-8 pt-8 border-t border-white/5">
                 {[
-                  { label: 'Role', value: 'IoT Systems Lead' },
-                  { label: 'Focus', value: 'Pythonic Hardware' },
-                  { label: 'Status', value: 'Active Programmer' },
-                  { label: 'Location', value: 'Tamil Nadu, India' },
+                  { label: 'Role', value: 'MCA Student' },
+                  { label: 'Focus', value: 'IoT & Python' },
+                  { label: 'Status', value: 'Seeking Challenges' },
+                  { label: 'Location', value: 'Erode, Tamil Nadu' },
                 ].map((stat, idx) => (
                   <div key={idx} className="space-y-1">
                     <span className="text-[10px] font-black text-slate-600 uppercase tracking-widest">{stat.label}</span>

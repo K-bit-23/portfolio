@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Cpu, Activity, Code2, Layers, Download, Terminal, Zap, Globe } from 'lucide-react';
+import { ArrowRight, Cpu, Activity, Layers, Download, Terminal, Zap, Globe } from 'lucide-react';
 
 const Hero: React.FC = () => {
     const resumeLink = "https://drive.google.com/file/d/1e9-XOho70TdAUvm5NcCursTlkmhhv4Ui/view?usp=drive_link";
