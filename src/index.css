@@ -27,26 +27,40 @@
 
 @layer components {
     .premium-card {
-        @apply bg-slate-900/40 backdrop-blur-xl border border-white/5 rounded-3xl transition-all duration-500 p-6 md:p-10;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        @apply bg-slate-900/40 backdrop-blur-2xl border border-white/5 rounded-[2rem] transition-all duration-700 p-6 md:p-10;
+        box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
     }
 
     .premium-card:hover {
-        @apply border-emerald-500/20 bg-slate-900/60;
-        transform: translateY(-4px);
+        @apply border-emerald-500/30 bg-slate-900/60;
+        transform: translateY(-8px) scale(1.01);
     }
 
     .text-glow-emerald {
-        text-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+        text-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
     }
 
-    .button-glow {
-        @apply relative overflow-hidden transition-all duration-300;
-        box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+    .cyber-button {
+        @apply relative px-8 py-4 bg-emerald-500 text-slate-950 font-black rounded-xl overflow-hidden transition-all duration-300 uppercase tracking-widest text-[10px] flex items-center gap-3;
+        box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
     }
 
-    .button-glow:hover {
-        box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+    .cyber-button:hover {
+        @apply scale-105;
+        box-shadow: 0 0 50px rgba(16, 185, 129, 0.4);
+    }
+
+    .cyber-button::before {
+        content: '';
+        @apply absolute inset-0 bg-white opacity-0 hover:opacity-10 transition-opacity;
+    }
+
+    .glass-nav {
+        @apply bg-slate-950/40 backdrop-blur-2xl border-b border-white/5;
+    }
+
+    .emerald-gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400;
     }
 }
 
