@@ -8,7 +8,7 @@ const About: React.FC = () => {
       level: 'Postgraduate',
       degree: 'Master of Computer Applications',
       institute: 'Kongu Engineering College',
-      years: '2024 - 2026',
+      years: '2026',
       status: 'Current Node',
       details: 'Specializing in Advanced AI and IoT System Architectures.'
     },
@@ -16,17 +16,17 @@ const About: React.FC = () => {
       level: 'Undergraduate',
       degree: 'Bachelor of Computer Applications',
       institute: 'Sri Ramakrishna Mission Vidyalaya College of Arts & Science',
-      years: '2021 - 2024',
-      status: '8.5 CGPA',
-      details: 'Foundation in Computer Science, Database Management, and IoT basics.'
+      years: '2024',
+      status: 'Completed',
+      details: 'Foundation in Computer Applications, Database Management, and IoT basics.'
     },
     {
       level: 'Higher Secondary',
-      degree: 'Computer Science Stream',
+      degree: 'Computer Application Stream',
       institute: 'URC Palaniammal Matric Hr. Sec. School',
-      years: '2019 - 2021',
+      years: '2021',
       status: 'Completed',
-      details: 'Focused on Mathematics and Physics.'
+      details: 'Focused on Computer Applications and Foundation Logic.'
     }
   ];
 
