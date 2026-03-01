@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Terminal, Layout } from 'lucide-react';
+import { Cpu, Terminal, Layout, Smartphone } from 'lucide-react';
 
 const Skills: React.FC = () => {
     const skillCategories = [
@@ -23,9 +23,7 @@ const Skills: React.FC = () => {
                 'ESP8266 / NodeMCU',
                 'Arduino & Sensors',
                 'MQTT / WebSockets',
-                'Embedded C/C++',
-                'PCB Design',
-                'Circuit Logic'
+                'Embedded C/C++'
             ]
         },
         {
@@ -38,6 +36,17 @@ const Skills: React.FC = () => {
                 'Framer Motion',
                 'Responsive Design',
                 'UI/UX Implementation'
+            ]
+        },
+        {
+            title: 'Mobile Development',
+            icon: <Smartphone className="w-6 h-6 text-emerald-500" />,
+            skills: [
+                'React Native',
+                'Expo Go',
+                'Mobile UI/UX',
+                'Native Modules',
+                'API Integration'
             ]
         }
     ];
@@ -66,7 +75,7 @@ const Skills: React.FC = () => {
                     </motion.h2>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-10 max-w-6xl mx-auto">
                     {skillCategories.map((category, idx) => (
                         <motion.div
                             key={category.title}

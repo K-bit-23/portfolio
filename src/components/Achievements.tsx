@@ -11,7 +11,7 @@ const Achievements: React.FC = () => {
         },
         {
             title: '1st Place - Technical Quiz Competition',
-            organization: 'PSG College',
+            organization: 'PPG College',
             year: '2023'
         },
         {
@@ -21,7 +21,7 @@ const Achievements: React.FC = () => {
         },
         {
             title: '2nd Place - AI Event',
-            organization: 'KEC',
+            organization: 'NEC',
             year: '2023'
         }
     ];
