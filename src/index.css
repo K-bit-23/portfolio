@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --neon-cyan: #00e0ff;
+  --neon-green: #00ff41;
+  --neon-purple: #b026ff;
+  --deep-space: #05070a;
+}
+
+@layer base {
+  body {
+    @apply bg-[#05070a] text-slate-300 font-sans antialiased;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+    box-shadow: 0 8px 32px 0 rgba(0, 224, 255, 0.05);
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 15px rgba(0, 224, 255, 0.4);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#00e0ff] to-[#b026ff];
+  }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scanline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--neon-cyan), transparent);
+  animation: scanline 4s linear infinite;
+  opacity: 0.2;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--neon-cyan);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background 0.3s;
+  box-shadow: 0 0 10px var(--neon-cyan);
+}

@@ -2,10 +2,12 @@ import React from 'react';
 import './index.css';
 import Home from './pages/Home';
 
-const App: React.FC = () => {
+function App() {
   return (
-    <Home />
+    <div className="App scroll-smooth">
+      <Home />
+    </div>
   );
-};
+}
 
 export default App;
