@@ -1,66 +1,72 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Terminal, Layers } from 'lucide-react';
+import { Cpu, Terminal, Navigation } from 'lucide-react';
 
 const Skills: React.FC = () => {
     const skillCategories = [
         {
+            title: 'Automation & UAV',
+            icon: <Navigation className="w-6 h-6 text-emerald-500" />,
+            skills: [
+                'MAVLink Protocol',
+                'ArduPilot / PX4',
+                'Autonomous Flight',
+                'Sensor Fusion (IMU)',
+                'Obstacle Avoidance',
+                'UAV Telemetry'
+            ]
+        },
+        {
+            title: 'Programming & AI',
+            icon: <Terminal className="w-6 h-6 text-emerald-500" />,
+            skills: [
+                'Python (Expert)',
+                'Flask / FastAPI',
+                'Deep Learning',
+                'OpenCV (Computer Vision)',
+                'SQL / NoSQL',
+                'Automation Scripts'
+            ]
+        },
+        {
             title: 'IoT & Embedded',
-            icon: <Cpu className="w-6 h-6 text-neon-cyan" />,
+            icon: <Cpu className="w-6 h-6 text-emerald-500" />,
             skills: [
-                { name: 'ESP8266 / NodeMCU', level: 95 },
-                { name: 'Arduino & Sensors', level: 90 },
-                { name: 'MQTT Protocol', level: 85 },
-                { name: 'Embedded C', level: 80 },
-            ]
-        },
-        {
-            title: 'Programming',
-            icon: <Terminal className="w-6 h-6 text-neon-green" />,
-            skills: [
-                { name: 'Python', level: 95 },
-                { name: 'Flask / FastAPI', level: 85 },
-                { name: 'SQL / Databases', level: 80 },
-                { name: 'Automation Scripts', level: 90 },
-            ]
-        },
-        {
-            title: 'Web Technologies',
-            icon: <Layers className="w-6 h-6 text-neon-purple" />,
-            skills: [
-                { name: 'HTML5 / CSS3', level: 90 },
-                { name: 'JavaScript', level: 85 },
-                { name: 'Tailwind CSS', level: 80 },
-                { name: 'Responsive Design', level: 90 },
+                'ESP8266 / NodeMCU',
+                'Arduino & Sensors',
+                'MQTT / WebSockets',
+                'Embedded C/C++',
+                'PCB Design',
+                'Circuit Logic'
             ]
         }
     ];
 
     return (
-        <section id="skills" className="py-24 relative overflow-hidden">
+        <section id="skills" className="py-32 relative overflow-hidden">
             <div className="container mx-auto px-4 relative z-10">
 
-                <div className="text-center mb-16">
+                <div className="text-center mb-24">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-block text-neon-cyan text-sm font-bold tracking-[0.2em] uppercase mb-4"
+                        className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-black tracking-[0.3em] uppercase mb-6 shadow-[0_0_20px_rgba(16,185,129,0.1)]"
                     >
-                        Capabilities
+                        Mastery Grid
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-bold font-orbitron text-white"
+                        className="text-5xl md:text-6xl font-black font-orbitron text-white leading-tight"
                     >
-                        Technical <span className="text-gradient">Arsenal</span>
+                        Technical <span className="text-emerald-500 text-glow-emerald">Arsenal</span>
                     </motion.h2>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {skillCategories.map((category, idx) => (
                         <motion.div
                             key={category.title}
@@ -68,34 +74,33 @@ const Skills: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="premium-card p-10 group"
+                            className="premium-card p-10 group relative"
                         >
-                            <div className="flex items-center gap-5 mb-10">
-                                <div className="p-4 bg-emerald-500/10 rounded-2xl border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-all text-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.1)]">
-                                    {category.icon}
-                                </div>
-                                <h3 className="text-xl font-black font-orbitron text-white tracking-tight">{category.title}</h3>
+                            {/* Decorative Background Icon */}
+                            <div className="absolute top-10 right-10 text-emerald-500/5 group-hover:text-emerald-500/10 transition-colors pointer-events-none scale-[2.5] flex opacity-20">
+                                {category.icon}
                             </div>
 
-                            <div className="space-y-8">
+                            <div className="flex items-center gap-5 mb-12">
+                                <div className="p-4 bg-emerald-500/10 rounded-2xl border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-all text-emerald-500 shadow-xl">
+                                    {category.icon}
+                                </div>
+                                <h3 className="text-xl font-black font-orbitron text-white tracking-tight uppercase leading-none">{category.title}</h3>
+                            </div>
+
+                            <div className="flex flex-wrap gap-3">
                                 {category.skills.map((skill, sIdx) => (
-                                    <div key={skill.name} className="space-y-3">
-                                        <div className="flex justify-between items-end">
-                                            <span className="text-sm font-bold text-slate-400 group-hover:text-white transition-colors uppercase tracking-widest">{skill.name}</span>
-                                            <span className="text-xs font-black font-mono text-emerald-500">{skill.level}%</span>
-                                        </div>
-                                        <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden p-[1px] border border-white/5">
-                                            <motion.div
-                                                initial={{ width: 0 }}
-                                                whileInView={{ width: `${skill.level}%` }}
-                                                viewport={{ once: true }}
-                                                transition={{ duration: 1.5, ease: [0.65, 0, 0.35, 1], delay: 0.2 + (sIdx * 0.1) }}
-                                                className="h-full bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-full relative"
-                                            >
-                                                <div className="absolute top-0 right-0 w-8 h-full bg-white/20 blur-sm" />
-                                            </motion.div>
-                                        </div>
-                                    </div>
+                                    <motion.span
+                                        key={skill}
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.2 + (sIdx * 0.05) }}
+                                        whileHover={{ scale: 1.05, backgroundColor: 'rgba(16, 185, 129, 0.15)', borderColor: 'rgba(16, 185, 129, 0.4)' }}
+                                        className="px-5 py-2.5 bg-slate-950/40 border border-white/5 text-slate-400 font-bold text-xs uppercase tracking-widest rounded-2xl transition-all cursor-default hover:text-white"
+                                    >
+                                        {skill}
+                                    </motion.span>
                                 ))}
                             </div>
                         </motion.div>

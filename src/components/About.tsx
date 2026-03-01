@@ -4,17 +4,17 @@ import { GraduationCap } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-dark-lighter">
+    <section id="about" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-24">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block text-neon-purple text-sm font-bold tracking-[0.2em] uppercase mb-4"
+            className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-black tracking-[0.3em] uppercase mb-6"
           >
-            Core Extraction
+            Origin Story
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

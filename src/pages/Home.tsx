@@ -11,7 +11,7 @@ import Achievements from '@/components/Achievements';
 
 const Home: React.FC = () => {
   return (
-    <main className="relative min-h-screen bg-dark">
+    <main className="relative min-h-screen bg-slate-950 text-slate-300">
       <InteractiveBackground />
       <Navbar />
       <Hero />

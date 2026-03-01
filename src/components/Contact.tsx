@@ -4,17 +4,17 @@ import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-dark-lighter">
+    <section id="contact" className="py-24 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 px-4">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block text-neon-green text-sm font-bold tracking-[0.2em] uppercase mb-4"
+            className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-black tracking-[0.3em] uppercase mb-6"
           >
-            Engagement
+            Communication Protocol
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -38,8 +38,8 @@ const Contact: React.FC = () => {
               className="premium-card p-10 space-y-12"
             >
               {[
-                { icon: <Mail className="text-emerald-500 w-6 h-6" />, title: 'Email Me', value: 'karthikeyan.p.developer@gmail.com', href: 'mailto:karthikeyan.p.developer@gmail.com' },
-                { icon: <Phone className="text-emerald-500 w-6 h-6" />, title: 'Call / WhatsApp', value: '+91 93610 33181', href: 'https://wa.me/919361033181' },
+                { icon: <Mail className="text-emerald-500 w-6 h-6" />, title: 'Email Me', value: 'karthikeyankarthikeyan64182@gmail.com', href: 'mailto:karthikeyankarthikeyan64182@gmail.com' },
+                { icon: <Phone className="text-emerald-500 w-6 h-6" />, title: 'Call / WhatsApp', value: '9566723397', href: 'https://wa.me/919566723397' },
                 { icon: <MapPin className="text-emerald-500 w-6 h-6" />, title: 'Location', value: 'Tamil Nadu, India', href: '#' },
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-6 items-start group">

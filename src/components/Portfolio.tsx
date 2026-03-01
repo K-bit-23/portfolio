@@ -1,41 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Layers, Monitor, Cpu } from 'lucide-react';
+import { ExternalLink, Github, Layers, Monitor, Cpu, Navigation } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const projects = [
     {
-      title: 'Water Level Monitoring through Web Applications',
-      description: 'Developed a real-time water level monitoring system using ESP8266 and sensors. Integrated with a web dashboard to alert and visualize tank levels.',
-      image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=1074',
+      title: 'Autonomous UAV Navigation Hub',
+      description: 'Custom autonomous flight control system with real-time obstacle avoidance and sensor fusion (Imu, Gps, Lidar).',
+      tags: ['Drones', 'MAVLink', 'Python', 'Sensors'],
+      image: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=1000',
+      links: { github: '#', demo: '#' },
+      icon: <Navigation className="w-5 h-5 text-emerald-500" />
+    },
+    {
+      title: 'Water Level Monitoring System',
+      description: 'IoT-based real-time water level tracking system using ESP8266 and MQTT protocol with Flask dashboard.',
       tags: ['IoT', 'ESP8266', 'MQTT', 'Flask'],
-      links: {
-        github: 'https://github.com/K-bit-23',
-        demo: '#'
-      },
-      icon: <Cpu className="w-5 h-5 text-neon-cyan" />
+      image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=1074',
+      links: { github: '#', demo: '#' },
+      icon: <Cpu className="w-5 h-5 text-emerald-500" />
     },
     {
       title: 'Smart Parking Assistance Hub',
-      description: 'Created a smart parking detection system using image processing. Implements real-time slot detection and camera feed analysis using Computer Vision.',
+      description: 'AI-powered parking system using Computer Vision for slot detection and occupancy tracking.',
+      tags: ['AI', 'Computer Vision', 'Python', 'OpenCV'],
       image: 'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&q=80&w=1074',
-      tags: ['Computer Vision', 'Python', 'OpenCV'],
-      links: {
-        github: 'https://github.com/K-bit-23',
-        demo: '#'
-      },
-      icon: <Monitor className="w-5 h-5 text-neon-green" />
+      links: { github: '#', demo: '#' },
+      icon: <Monitor className="w-5 h-5 text-emerald-500" />
     },
     {
       title: 'Skin Tone and Eye Health Analysis',
-      description: 'Built a prototype model for analysis on image patterns to suggest healthy practices. Used survey data and applied classification algorithms for health risk prediction.',
+      description: 'Healthcare diagnostic tool using Machine Learning for preliminary facial dermatological analysis.',
+      tags: ['ML', 'Healthcare', 'Python', 'AI'],
       image: 'https://images.unsplash.com/photo-1576091160550-217359f49f4c?auto=format&fit=crop&q=80&w=1074',
-      tags: ['Machine Learning', 'Python', 'Healthcare AI'],
-      links: {
-        github: 'https://github.com/K-bit-23',
-        demo: '#'
-      },
-      icon: <Layers className="w-5 h-5 text-neon-purple" />
+      links: { github: '#', demo: '#' },
+      icon: <Layers className="w-5 h-5 text-emerald-500" />
     }
   ];
 
@@ -45,12 +44,12 @@ const Projects: React.FC = () => {
 
         <div className="text-center mb-16">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block text-neon-purple text-sm font-bold tracking-[0.2em] uppercase mb-4"
+            className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-black tracking-[0.3em] uppercase mb-6"
           >
-            Showcase
+            Project Node
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
