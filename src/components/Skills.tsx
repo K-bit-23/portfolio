@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Terminal, Layout, Smartphone } from 'lucide-react';
+import { Cpu, Terminal, Layout, Smartphone, ChevronRight } from 'lucide-react';
 
 const Skills: React.FC = () => {
     const skillCategories = [
         {
-            title: 'Programming & AI',
+            title: 'Intelligence & Logic',
+            id: 'CORE_LOGIC_01',
             icon: <Terminal className="w-6 h-6 text-emerald-500" />,
             skills: [
                 'Python (Expert)',
@@ -13,69 +14,69 @@ const Skills: React.FC = () => {
                 'Deep Learning',
                 'OpenCV (Vision)',
                 'SQL / NoSQL',
-                'Automation Scripts'
+                'Automation'
             ]
         },
         {
-            title: 'IoT & Embedded',
+            title: 'IoT & Hardware',
+            id: 'HARDWARE_NODE_02',
             icon: <Cpu className="w-6 h-6 text-emerald-500" />,
             skills: [
                 'ESP8266 / NodeMCU',
                 'Arduino & Sensors',
                 'MQTT / WebSockets',
-                'Embedded C/C++'
+                'Embedded C/C++',
+                'Hardware Logic',
+                'Circuitry'
             ]
         },
         {
-            title: 'Web & Frameworks',
+            title: 'Web Architectures',
+            id: 'CLIENT_SITE_03',
             icon: <Layout className="w-6 h-6 text-emerald-500" />,
             skills: [
                 'React.js',
-                'JavaScript (ES6)',
+                'JavaScript (ES6+)',
                 'Tailwind CSS',
                 'Framer Motion',
-                'Responsive Design',
-                'UI/UX Implementation'
+                'GSAP Animation',
+                'UI Implementation'
             ]
         },
         {
-            title: 'Mobile Development',
+            title: 'Mobile Systems',
+            id: 'MOBILE_APP_04',
             icon: <Smartphone className="w-6 h-6 text-emerald-500" />,
             skills: [
                 'React Native',
                 'Expo Go',
-                'Mobile UI/UX',
+                'Mobile Core',
                 'Native Modules',
-                'API Integration'
+                'API Uplinks',
+                'App Logic'
             ]
         }
     ];
 
     return (
-        <section id="skills" className="py-12 md:py-24 relative overflow-hidden">
+        <section id="skills" className="py-24 md:py-32 relative overflow-hidden bg-[#020408]">
             <div className="container mx-auto px-4 relative z-10">
 
-                <div className="text-center mb-12 md:mb-24">
+                <div className="text-center mb-16 md:mb-24">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-black tracking-[0.3em] uppercase mb-6 shadow-[0_0_20px_rgba(16,185,129,0.1)]"
+                        className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-[10px] font-black tracking-[0.3em] uppercase mb-6"
                     >
-                        Mastery Grid
+                        Mastery Protocol
                     </motion.div>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="text-5xl md:text-6xl font-black font-orbitron text-white leading-tight"
-                    >
-                        Technical <span className="text-emerald-500 text-glow-emerald">Arsenal</span>
-                    </motion.h2>
+                    <h2 className="text-5xl md:text-7xl font-black font-orbitron text-white">
+                        THE <span className="emerald-gradient-text">STACK.</span>
+                    </h2>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-10 max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
                     {skillCategories.map((category, idx) => (
                         <motion.div
                             key={category.title}
@@ -83,35 +84,42 @@ const Skills: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="premium-card group relative"
+                            className="premium-card group relative !p-0 overflow-hidden border-white/5 hover:border-emerald-500/30 transition-all duration-700"
                         >
-                            {/* Decorative Background Icon */}
-                            <div className="absolute top-10 right-10 text-emerald-500/5 group-hover:text-emerald-500/10 transition-colors pointer-events-none scale-[2.5] flex opacity-20">
-                                {category.icon}
-                            </div>
-
-                            <div className="flex items-center gap-5 mb-12">
-                                <div className="p-4 bg-emerald-500/10 rounded-2xl border border-emerald-500/20 group-hover:bg-emerald-500/20 transition-all text-emerald-500 shadow-xl">
-                                    {category.icon}
+                            {/* Card Header Decal */}
+                            <div className="bg-white/5 border-b border-white/5 px-6 py-3 flex items-center justify-between">
+                                <span className="text-[9px] font-mono text-emerald-500 font-black uppercase tracking-widest">{category.id}</span>
+                                <div className="flex gap-1.5">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/20" />
+                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/40" />
+                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                                 </div>
-                                <h3 className="text-xl font-black font-orbitron text-white tracking-tight uppercase leading-none">{category.title}</h3>
                             </div>
 
-                            <div className="flex flex-wrap gap-3">
-                                {category.skills.map((skill, sIdx) => (
-                                    <motion.span
-                                        key={skill}
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        whileInView={{ opacity: 1, scale: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.2 + (sIdx * 0.05) }}
-                                        whileHover={{ scale: 1.05, backgroundColor: 'rgba(16, 185, 129, 0.15)', borderColor: 'rgba(16, 185, 129, 0.4)' }}
-                                        className="px-5 py-2.5 bg-slate-950/40 border border-white/5 text-slate-400 font-bold text-xs uppercase tracking-widest rounded-2xl transition-all cursor-default hover:text-white"
-                                    >
-                                        {skill}
-                                    </motion.span>
-                                ))}
+                            <div className="p-8 md:p-10">
+                                <div className="flex items-center gap-6 mb-10">
+                                    <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-all duration-500 shadow-2xl shadow-emerald-500/5">
+                                        {category.icon}
+                                    </div>
+                                    <h3 className="text-2xl font-black font-orbitron text-white tracking-tight uppercase leading-none group-hover:emerald-gradient-text transition-all">
+                                        {category.title}
+                                    </h3>
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-y-4 gap-x-6">
+                                    {category.skills.map((skill, sIdx) => (
+                                        <div key={sIdx} className="flex items-center gap-3 group/item">
+                                            <ChevronRight className="w-3 h-3 text-emerald-500/40 group-hover/item:text-emerald-500 transition-colors" />
+                                            <span className="text-xs font-bold text-slate-400 group-hover/item:text-white transition-colors uppercase tracking-tight">
+                                                {skill}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
+
+                            {/* Corner Decal */}
+                            <div className="absolute bottom-0 right-0 w-12 h-12 bg-emerald-500/5 rounded-tl-3xl border-t border-l border-white/5 group-hover:border-emerald-500/20 transition-all" />
                         </motion.div>
                     ))}
                 </div>
