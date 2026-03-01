@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, MessageSquare, Github, Linkedin, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Youtube } from 'lucide-react';
 
 const Contact: React.FC = () => {
   return (
@@ -38,8 +38,8 @@ const Contact: React.FC = () => {
               className="glass-card p-10 border border-white/5 space-y-12"
             >
               {[
-                { icon: <Mail className="text-neon-cyan w-6 h-6" />, title: 'Email Me', value: 'karthikeyankarthikeyan64182@gmail.com', href: 'mailto:karthikeyankarthikeyan64182@gmail.com' },
-                { icon: <Phone className="text-neon-green w-6 h-6" />, title: 'Call / WhatsApp', value: '+91 95667 23397', href: 'https://wa.me/919566723397' },
+                { icon: <Mail className="text-neon-cyan w-6 h-6" />, title: 'Email Me', value: 'karthikeyan.p.developer@gmail.com', href: 'mailto:karthikeyan.p.developer@gmail.com' },
+                { icon: <Phone className="text-neon-green w-6 h-6" />, title: 'Call / WhatsApp', value: '+91 93610 33181', href: 'https://wa.me/919361033181' },
                 { icon: <MapPin className="text-neon-purple w-6 h-6" />, title: 'Location', value: 'Tamil Nadu, India', href: '#' },
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-6 items-start group">

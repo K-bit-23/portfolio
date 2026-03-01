@@ -3,65 +3,76 @@
 @import "tailwindcss/utilities";
 
 :root {
-    --neon-cyan: #00e0ff;
-    --neon-green: #00ff41;
-    --neon-purple: #b026ff;
-    --deep-space: #05070a;
+    --bg-primary: #020617;
+    --bg-secondary: #0f172a;
+    --accent-primary: #10b981;
+    --accent-secondary: #06b6d4;
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
+    --glass: rgba(15, 23, 42, 0.6);
+    --border: rgba(255, 255, 255, 0.08);
 }
 
 @layer base {
     body {
-        @apply bg-[#05070a] text-slate-300 font-sans antialiased;
+        @apply bg-[#020617] text-slate-300 font-sans antialiased;
         overflow-x: hidden;
+        background-image:
+            radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        background-size: 100% 100%, 60px 60px, 60px 60px;
     }
 }
 
 @layer components {
-    .glass-card {
-        @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
-        box-shadow: 0 8px 32px 0 rgba(0, 224, 255, 0.05);
+    .premium-card {
+        @apply bg-slate-900/40 backdrop-blur-xl border border-white/5 rounded-3xl transition-all duration-500;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     }
 
-    .neon-glow {
-        box-shadow: 0 0 15px rgba(0, 224, 255, 0.4);
+    .premium-card:hover {
+        @apply border-emerald-500/20 bg-slate-900/60;
+        transform: translateY(-4px);
     }
 
-    .text-gradient {
-        @apply bg-clip-text text-transparent bg-gradient-to-r from-[#00e0ff] to-[#b026ff];
+    .text-glow-emerald {
+        text-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+    }
+
+    .button-glow {
+        @apply relative overflow-hidden transition-all duration-300;
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+    }
+
+    .button-glow:hover {
+        box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
     }
 }
 
-@keyframes scanline {
-    0% {
-        transform: translateY(-100%);
-    }
-
-    100% {
-        transform: translateY(100%);
-    }
-}
-
-.scanline::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, transparent, var(--neon-cyan), transparent);
-    animation: scanline 4s linear infinite;
-    opacity: 0.2;
+.scroll-mask {
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
 }
 
 .custom-cursor {
-    width: 20px;
-    height: 20px;
-    border: 1px solid var(--neon-cyan);
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(16, 185, 129, 0.3);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    transition: width 0.3s, height 0.3s, background 0.3s;
-    box-shadow: 0 0 10px var(--neon-cyan);
+    transition: transform 0.1s ease-out, width 0.3s, height 0.3s;
+}
+
+.custom-cursor-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
 }

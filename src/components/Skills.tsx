@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Terminal, Layers, Globe, Shield, Database } from 'lucide-react';
+import { Cpu, Terminal, Layers } from 'lucide-react';
 
 const Skills: React.FC = () => {
     const skillCategories = [
@@ -8,30 +8,30 @@ const Skills: React.FC = () => {
             title: 'IoT & Embedded',
             icon: <Cpu className="w-6 h-6 text-neon-cyan" />,
             skills: [
-                { name: 'ESP8266 / NodeMCU', level: 90 },
-                { name: 'Arduino SDK', level: 85 },
-                { name: 'MQTT Protocol', level: 80 },
-                { name: 'Sensor Integration', level: 95 },
+                { name: 'ESP8266 / NodeMCU', level: 95 },
+                { name: 'Arduino & Sensors', level: 90 },
+                { name: 'MQTT Protocol', level: 85 },
+                { name: 'Embedded C', level: 80 },
             ]
         },
         {
             title: 'Programming',
             icon: <Terminal className="w-6 h-6 text-neon-green" />,
             skills: [
-                { name: 'Python', level: 90 },
-                { name: 'JavaScript / TypeScript', level: 75 },
-                { name: 'C / C++', level: 70 },
-                { name: 'SQL', level: 80 },
+                { name: 'Python', level: 95 },
+                { name: 'Flask / FastAPI', level: 85 },
+                { name: 'SQL / Databases', level: 80 },
+                { name: 'Automation Scripts', level: 90 },
             ]
         },
         {
-            title: 'Web & Platforms',
+            title: 'Web Technologies',
             icon: <Layers className="w-6 h-6 text-neon-purple" />,
             skills: [
-                { name: 'Flask / FastAPI', level: 85 },
-                { name: 'React / Next.js', level: 70 },
-                { name: 'Google Cloud Platform', level: 65 },
-                { name: 'Adafruit IO / ThingSpeak', level: 90 },
+                { name: 'HTML5 / CSS3', level: 90 },
+                { name: 'JavaScript', level: 85 },
+                { name: 'Tailwind CSS', level: 80 },
+                { name: 'Responsive Design', level: 90 },
             ]
         }
     ];

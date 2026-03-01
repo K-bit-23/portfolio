@@ -7,6 +7,8 @@ import Portfolio from '@/components/Portfolio';
 import Contact from '@/components/Contact';
 import InteractiveBackground from '@/components/InteractiveBackground';
 
+import Achievements from '@/components/Achievements';
+
 const Home: React.FC = () => {
   return (
     <main className="relative min-h-screen bg-dark">
@@ -15,6 +17,7 @@ const Home: React.FC = () => {
       <Hero />
       <About />
       <Skills />
+      <Achievements />
       <Portfolio />
       <Contact />
 

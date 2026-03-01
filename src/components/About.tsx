@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { User, GraduationCap, Code2, Globe, Heart, Shield } from 'lucide-react';
+import { GraduationCap, Globe, Shield } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
@@ -70,32 +70,63 @@ const About: React.FC = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h3 className="text-3xl font-bold font-orbitron text-white/90">Karthikeyan Pandiyaraj</h3>
+            <h3 className="text-3xl font-bold font-orbitron text-white/90">Karthikeyan P</h3>
             <p className="text-lg text-slate-400 leading-relaxed max-w-xl">
-              I am a passionate IoT enthusiast with a deep focus on Python and embedded systems.
-              My journey started with a simple LED blink and has evolved into building
-              intelligent, connected systems that solve real-world problems.
+              Aspiring tech enthusiast with a strong foundation in IoT and Python, eager to apply my skills to real-world applications.
+              Seeking a challenging role where I can contribute to innovative solutions while continuously growing in a dynamic environment.
             </p>
             <p className="text-lg text-slate-400 leading-relaxed max-w-xl">
-              Currently pursuing my Master's in Computer Applications (MCA) at Kongu Engineering College,
-              I apply theoretical knowledge to build practical solutions in cybersecurity,
-              machine learning, and real-time data analysis.
+              I specialize in connecting physical sensors to digital networks, creating seamless ecosystems that bridge the gap
+              between hardware and software excellence.
             </p>
 
-            <div className="grid grid-cols-2 gap-8 pt-8">
+            <div className="space-y-6 pt-8">
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-neon-cyan">
                   <GraduationCap className="w-6 h-6" />
-                  <h4 className="font-bold font-orbitron text-sm">Education</h4>
+                  <h4 className="font-bold font-orbitron text-sm uppercase tracking-widest">Education</h4>
                 </div>
-                <p className="text-sm text-slate-500">MCA @ Kongu Engineering College<br />(Graduating 2026)</p>
+                <div className="grid gap-4">
+                  <div className="pl-9 relative border-l border-white/10 ml-3">
+                    <div className="absolute top-2 -left-[5px] w-2 h-2 rounded-full bg-neon-cyan shadow-[0_0_10px_rgba(0,224,255,1)]" />
+                    <p className="text-sm font-bold text-white">Master of Computer Applications (MCA)</p>
+                    <p className="text-xs text-slate-500">Kongu Engineering College | 2024</p>
+                  </div>
+                  <div className="pl-9 relative border-l border-white/10 ml-3">
+                    <div className="absolute top-2 -left-[5px] w-2 h-2 rounded-full bg-neon-cyan/40" />
+                    <p className="text-sm font-bold text-white">Bachelor of Computer Applications (BCA)</p>
+                    <p className="text-xs text-slate-500">Sri Ramakrishna Mission Vidyalaya College of Arts & Science | 2021</p>
+                  </div>
+                  <div className="pl-9 relative border-l border-white/10 ml-3">
+                    <div className="absolute top-2 -left-[5px] w-2 h-2 rounded-full bg-neon-cyan/20" />
+                    <p className="text-sm font-bold text-white">Higher Secondary Education</p>
+                    <p className="text-xs text-slate-500">GVC Higher Secondary School | 2018</p>
+                  </div>
+                </div>
               </div>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-neon-green">
-                  <Code2 className="w-6 h-6" />
-                  <h4 className="font-bold font-orbitron text-sm">Coding</h4>
+
+              <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+                  <div className="flex items-center gap-3 text-neon-green mb-2">
+                    <Shield className="w-5 h-5" />
+                    <h4 className="font-bold font-orbitron text-xs uppercase">Interests</h4>
+                  </div>
+                  <ul className="text-xs text-slate-400 space-y-1">
+                    <li>• DIY Electronic Projects</li>
+                    <li>• Web Interfaces</li>
+                    <li>• Edge AI & Smart Devices</li>
+                  </ul>
                 </div>
-                <p className="text-sm text-slate-500">5+ Programming Languages<br />10+ Custom Libraries</p>
+                <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+                  <div className="flex items-center gap-3 text-neon-purple mb-2">
+                    <Globe className="w-5 h-5" />
+                    <h4 className="font-bold font-orbitron text-xs uppercase">Organizations</h4>
+                  </div>
+                  <ul className="text-xs text-slate-400 space-y-1">
+                    <li>• Environmental & Energy Club</li>
+                    <li>• Institution's Innovation Council</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </motion.div>

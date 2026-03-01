@@ -5,10 +5,10 @@ import { ExternalLink, Github, Layers, Monitor, Cpu } from 'lucide-react';
 const Projects: React.FC = () => {
   const projects = [
     {
-      title: 'Real-time Water Monitoring System',
-      description: 'A custom IoT solution using ESP8266 and ultrasonic sensors to monitor water levels in real-time. Integrated with a Flask web dashboard and MQTT for instant notifications.',
+      title: 'Water Level Monitoring through Web Applications',
+      description: 'Developed a real-time water level monitoring system using ESP8266 and sensors. Integrated with a web dashboard to alert and visualize tank levels.',
       image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=1074',
-      tags: ['IoT', 'Python', 'ESP8266', 'MQTT'],
+      tags: ['IoT', 'ESP8266', 'MQTT', 'Flask'],
       links: {
         github: 'https://github.com/K-bit-23',
         demo: '#'
@@ -16,10 +16,10 @@ const Projects: React.FC = () => {
       icon: <Cpu className="w-5 h-5 text-neon-cyan" />
     },
     {
-      title: 'Smart Home Automation Controller',
-      description: 'A centralized controller for various home appliances with a mobile-responsive web interface and voice-activated commands via custom hardware.',
-      image: 'https://images.unsplash.com/photo-1558346489-19413928158b?auto=format&fit=crop&q=80&w=1074',
-      tags: ['Python', 'NodeMCU', 'JavaScript'],
+      title: 'Smart Parking Assistance Hub',
+      description: 'Created a smart parking detection system using image processing. Implements real-time slot detection and camera feed analysis using Computer Vision.',
+      image: 'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&q=80&w=1074',
+      tags: ['Computer Vision', 'Python', 'OpenCV'],
       links: {
         github: 'https://github.com/K-bit-23',
         demo: '#'
@@ -27,10 +27,10 @@ const Projects: React.FC = () => {
       icon: <Monitor className="w-5 h-5 text-neon-green" />
     },
     {
-      title: 'Asset Tracking & Fleet Management',
-      description: 'An advanced tracking system using GPS modules and GSM technology to provide live location updates and geofencing capabilities for logistic fleets.',
-      image: 'https://images.unsplash.com/photo-1512411413341-2a1d0f8549e3?auto=format&fit=crop&q=80&w=1074',
-      tags: ['IoT', 'GPS', 'GSM', 'FastAPI'],
+      title: 'Skin Tone and Eye Health Analysis',
+      description: 'Built a prototype model for analysis on image patterns to suggest healthy practices. Used survey data and applied classification algorithms for health risk prediction.',
+      image: 'https://images.unsplash.com/photo-1576091160550-217359f49f4c?auto=format&fit=crop&q=80&w=1074',
+      tags: ['Machine Learning', 'Python', 'Healthcare AI'],
       links: {
         github: 'https://github.com/K-bit-23',
         demo: '#'
